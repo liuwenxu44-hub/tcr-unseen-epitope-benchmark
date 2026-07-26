@@ -1,0 +1,579 @@
+{
+  "artifacts": {
+    "generator_script": "scripts/build_distance_aware_5fold_rebalanced.py",
+    "manifest_json": "data/splits/distance_aware_5fold_rebalanced/distance_aware_5fold_rebalanced_positive_splits_manifest.json",
+    "report_md": "results/distance_aware_5fold_rebalanced/development_distance_aware_5fold_rebalanced_report.md"
+  },
+  "bucket_allocation": {
+    "algorithm": "deterministic greedy normalized squared error",
+    "bucket_score": "weighted normalized query-count SSE plus record-count SSE",
+    "bucket_tie_break": "seeded SHA-256",
+    "component_order": "descending weighted normalized component magnitude, seeded SHA-256 tie break",
+    "objective": "joint_weighted",
+    "reference_audit": {
+      "path": "results/distance_aware_5fold_audit/distance_aware_5fold_imbalance_audit.json",
+      "selected_simulation": "joint_weighted",
+      "sha256": "e2de49e437f7d31660cb283defb4d58b3bb4e48ec889b7d9d65c12523eb689ef"
+    },
+    "weights": {
+      "positive_record_count": 0.5,
+      "query_count": 0.5
+    }
+  },
+  "buckets": {
+    "bucket_0": {
+      "component_count": 26,
+      "component_sha256": "c751a90e7e452aef6dc0ca3608fbf219f0371fe9f81741c4aa2ddf22c5c81dcc",
+      "fraction_of_tier": 0.3091227690217659,
+      "positive_pairs": 31401,
+      "query_count": 33,
+      "target_deviation": 11084,
+      "target_positive_pairs": 20317,
+      "target_query_count": 33.6,
+      "unique_epitopes": 31,
+      "unique_hlas": 13,
+      "unique_pmhcs": 33
+    },
+    "bucket_1": {
+      "component_count": 26,
+      "component_sha256": "812451f8af5177d26d27adb54f08293550d5d76b4a3d4cc2e982c9c5d57f5e61",
+      "fraction_of_tier": 0.17585965879445958,
+      "positive_pairs": 17864,
+      "query_count": 33,
+      "target_deviation": -2452,
+      "target_positive_pairs": 20316,
+      "target_query_count": 33.6,
+      "unique_epitopes": 30,
+      "unique_hlas": 10,
+      "unique_pmhcs": 33
+    },
+    "bucket_2": {
+      "component_count": 25,
+      "component_sha256": "1d34ae91f0a359cd74f3703d4c97527bb132c1b06f930932f82efd335687369b",
+      "fraction_of_tier": 0.16325887715222334,
+      "positive_pairs": 16584,
+      "query_count": 34,
+      "target_deviation": -3732,
+      "target_positive_pairs": 20316,
+      "target_query_count": 33.6,
+      "unique_epitopes": 34,
+      "unique_hlas": 10,
+      "unique_pmhcs": 34
+    },
+    "bucket_3": {
+      "component_count": 28,
+      "component_sha256": "72b74b9c2d3eb837085560910ff29b7a33edc864f60889e52e56709803dbe47f",
+      "fraction_of_tier": 0.17602701292564554,
+      "positive_pairs": 17881,
+      "query_count": 34,
+      "target_deviation": -2435,
+      "target_positive_pairs": 20316,
+      "target_query_count": 33.6,
+      "unique_epitopes": 33,
+      "unique_hlas": 8,
+      "unique_pmhcs": 34
+    },
+    "bucket_4": {
+      "component_count": 28,
+      "component_sha256": "9d9b257381fea5d5e86a8d7fed6dadef2bb493c52dec41acfa02fd906c4427df",
+      "fraction_of_tier": 0.17573168210590565,
+      "positive_pairs": 17851,
+      "query_count": 34,
+      "target_deviation": -2465,
+      "target_positive_pairs": 20316,
+      "target_query_count": 33.6,
+      "unique_epitopes": 33,
+      "unique_hlas": 13,
+      "unique_pmhcs": 34
+    }
+  },
+  "config": {
+    "path": "configs/distance_aware_5fold_rebalanced.yaml",
+    "sha256": "4ae60e30c8f2ca099110fc1a82971c71cf533ee981b1e7b8e3e41e837f491ade"
+  },
+  "fold_count": 5,
+  "fold_csv_sha256": {
+    "fold_1": {
+      "test": "7b9ef29945944d3bab17f80b8b942863dbba7f52710abc36aae69f2828ae0260",
+      "train": "c130e765f435f209c697bad6de43737b6a0e0298bbdd1eadb65703d939d4d12d",
+      "validation": "807f42a2e7228eb449088084e59845ec171bf2f3aeef79eb41881c2842e04cdd"
+    },
+    "fold_2": {
+      "test": "807f42a2e7228eb449088084e59845ec171bf2f3aeef79eb41881c2842e04cdd",
+      "train": "2063b9cf809526a1ed163530e9c4c3e3fc11a013320172bf29743f5c7e5202b6",
+      "validation": "4ff41049bb3d28e281cdba47c6e8f27615cc573a17f0f0d8da93cf957f2b3abc"
+    },
+    "fold_3": {
+      "test": "4ff41049bb3d28e281cdba47c6e8f27615cc573a17f0f0d8da93cf957f2b3abc",
+      "train": "95a200f518496938a9c7d915ef7bef7d452476b4dbd64f17834a12c2455757d7",
+      "validation": "08ea3def4532a94886a77386846ef8bc808eba6c78670b2eb145af8f5563ed4c"
+    },
+    "fold_4": {
+      "test": "08ea3def4532a94886a77386846ef8bc808eba6c78670b2eb145af8f5563ed4c",
+      "train": "44364c85d8a616a2556870fa60ca7dbdd22cafb1b4d91087727e091fa6735fb9",
+      "validation": "0984f111e63e1a13b9d523f836b9c88768ceb9243e4f22109963d1e1e1d7d942"
+    },
+    "fold_5": {
+      "test": "0984f111e63e1a13b9d523f836b9c88768ceb9243e4f22109963d1e1e1d7d942",
+      "train": "0c5dff4ee0183bbca5403df39a54e25b36434c7a7232c7a29bd861b5186b9e51",
+      "validation": "7b9ef29945944d3bab17f80b8b942863dbba7f52710abc36aae69f2828ae0260"
+    }
+  },
+  "folds": {
+    "fold_1": {
+      "cross_partition_similarity": {
+        "maximum_similarity": 0.5,
+        "pairwise": {
+          "train_vs_test": {
+            "left_peptide": "ALYGFVPVL",
+            "maximum_similarity": 0.4444444444444444,
+            "right_peptide": "LLHGFSFYL"
+          },
+          "train_vs_validation": {
+            "left_peptide": "FTSDYYQLY",
+            "maximum_similarity": 0.5,
+            "right_peptide": "LTSLTILQLY"
+          },
+          "validation_vs_test": {
+            "left_peptide": "LTSLTILQLY",
+            "maximum_similarity": 0.5,
+            "right_peptide": "LLSLFSLWL"
+          }
+        }
+      },
+      "index": 0,
+      "invariants": {
+        "combined_duplicate_interaction_keys": 0,
+        "combined_positive_pairs": 101581,
+        "cross_partition_maximum_similarity": 0.5,
+        "cross_partition_threshold_satisfied": true,
+        "extra_or_modified_full_records": 0,
+        "missing_full_records": 0,
+        "nonempty_partition_count": 3,
+        "peptide_overlap_across_partitions": 0,
+        "source_positive_pairs": 101581,
+        "split_component_count": 0
+      },
+      "partitions": {
+        "test": {
+          "component_count": 26,
+          "file": "development_distance_aware_rebalanced_fold_1_test.csv",
+          "fraction_of_tier": 0.3091227690217659,
+          "positive_pairs": 31401,
+          "sha256": "7b9ef29945944d3bab17f80b8b942863dbba7f52710abc36aae69f2828ae0260",
+          "unique_epitopes": 31,
+          "unique_hlas": 13,
+          "unique_pmhcs": 33,
+          "unique_tcrs": 31347
+        },
+        "train": {
+          "component_count": 81,
+          "file": "development_distance_aware_rebalanced_fold_1_train.csv",
+          "fraction_of_tier": 0.5150175721837745,
+          "positive_pairs": 52316,
+          "sha256": "c130e765f435f209c697bad6de43737b6a0e0298bbdd1eadb65703d939d4d12d",
+          "unique_epitopes": 100,
+          "unique_hlas": 16,
+          "unique_pmhcs": 102,
+          "unique_tcrs": 47671
+        },
+        "validation": {
+          "component_count": 26,
+          "file": "development_distance_aware_rebalanced_fold_1_validation.csv",
+          "fraction_of_tier": 0.17585965879445958,
+          "positive_pairs": 17864,
+          "sha256": "807f42a2e7228eb449088084e59845ec171bf2f3aeef79eb41881c2842e04cdd",
+          "unique_epitopes": 30,
+          "unique_hlas": 10,
+          "unique_pmhcs": 33,
+          "unique_tcrs": 16430
+        }
+      },
+      "same_hla_train_reference_coverage": 0.8484848484848485,
+      "test_bucket": "bucket_0",
+      "test_queries_with_same_hla_train_reference": 28,
+      "test_query_count": 33,
+      "train_buckets": [
+        "bucket_2",
+        "bucket_3",
+        "bucket_4"
+      ],
+      "validation_bucket": "bucket_1"
+    },
+    "fold_2": {
+      "cross_partition_similarity": {
+        "maximum_similarity": 0.5,
+        "pairwise": {
+          "train_vs_test": {
+            "left_peptide": "LLSLFSLWL",
+            "maximum_similarity": 0.5,
+            "right_peptide": "LTSLTILQLY"
+          },
+          "train_vs_validation": {
+            "left_peptide": "FLASKIGRLV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "ALAGIGILTV"
+          },
+          "validation_vs_test": {
+            "left_peptide": "FTSDYYQLY",
+            "maximum_similarity": 0.5,
+            "right_peptide": "LTSLTILQLY"
+          }
+        }
+      },
+      "index": 1,
+      "invariants": {
+        "combined_duplicate_interaction_keys": 0,
+        "combined_positive_pairs": 101581,
+        "cross_partition_maximum_similarity": 0.5,
+        "cross_partition_threshold_satisfied": true,
+        "extra_or_modified_full_records": 0,
+        "missing_full_records": 0,
+        "nonempty_partition_count": 3,
+        "peptide_overlap_across_partitions": 0,
+        "source_positive_pairs": 101581,
+        "split_component_count": 0
+      },
+      "partitions": {
+        "test": {
+          "component_count": 26,
+          "file": "development_distance_aware_rebalanced_fold_2_test.csv",
+          "fraction_of_tier": 0.17585965879445958,
+          "positive_pairs": 17864,
+          "sha256": "807f42a2e7228eb449088084e59845ec171bf2f3aeef79eb41881c2842e04cdd",
+          "unique_epitopes": 30,
+          "unique_hlas": 10,
+          "unique_pmhcs": 33,
+          "unique_tcrs": 16430
+        },
+        "train": {
+          "component_count": 82,
+          "file": "development_distance_aware_rebalanced_fold_2_train.csv",
+          "fraction_of_tier": 0.660881464053317,
+          "positive_pairs": 67133,
+          "sha256": "2063b9cf809526a1ed163530e9c4c3e3fc11a013320172bf29743f5c7e5202b6",
+          "unique_epitopes": 97,
+          "unique_hlas": 20,
+          "unique_pmhcs": 101,
+          "unique_tcrs": 65132
+        },
+        "validation": {
+          "component_count": 25,
+          "file": "development_distance_aware_rebalanced_fold_2_validation.csv",
+          "fraction_of_tier": 0.16325887715222334,
+          "positive_pairs": 16584,
+          "sha256": "4ff41049bb3d28e281cdba47c6e8f27615cc573a17f0f0d8da93cf957f2b3abc",
+          "unique_epitopes": 34,
+          "unique_hlas": 10,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 16396
+        }
+      },
+      "same_hla_train_reference_coverage": 0.9393939393939394,
+      "test_bucket": "bucket_1",
+      "test_queries_with_same_hla_train_reference": 31,
+      "test_query_count": 33,
+      "train_buckets": [
+        "bucket_0",
+        "bucket_3",
+        "bucket_4"
+      ],
+      "validation_bucket": "bucket_2"
+    },
+    "fold_3": {
+      "cross_partition_similarity": {
+        "maximum_similarity": 0.5,
+        "pairwise": {
+          "train_vs_test": {
+            "left_peptide": "FLASKIGRLV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "ALAGIGILTV"
+          },
+          "train_vs_validation": {
+            "left_peptide": "FLRGRAYGL",
+            "maximum_similarity": 0.4444444444444444,
+            "right_peptide": "FPRPWLHGL"
+          },
+          "validation_vs_test": {
+            "left_peptide": "VISNDVCAQV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "CINGVCWTV"
+          }
+        }
+      },
+      "index": 2,
+      "invariants": {
+        "combined_duplicate_interaction_keys": 0,
+        "combined_positive_pairs": 101581,
+        "cross_partition_maximum_similarity": 0.5,
+        "cross_partition_threshold_satisfied": true,
+        "extra_or_modified_full_records": 0,
+        "missing_full_records": 0,
+        "nonempty_partition_count": 3,
+        "peptide_overlap_across_partitions": 0,
+        "source_positive_pairs": 101581,
+        "split_component_count": 0
+      },
+      "partitions": {
+        "test": {
+          "component_count": 25,
+          "file": "development_distance_aware_rebalanced_fold_3_test.csv",
+          "fraction_of_tier": 0.16325887715222334,
+          "positive_pairs": 16584,
+          "sha256": "4ff41049bb3d28e281cdba47c6e8f27615cc573a17f0f0d8da93cf957f2b3abc",
+          "unique_epitopes": 34,
+          "unique_hlas": 10,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 16396
+        },
+        "train": {
+          "component_count": 80,
+          "file": "development_distance_aware_rebalanced_fold_3_train.csv",
+          "fraction_of_tier": 0.6607141099221311,
+          "positive_pairs": 67116,
+          "sha256": "95a200f518496938a9c7d915ef7bef7d452476b4dbd64f17834a12c2455757d7",
+          "unique_epitopes": 94,
+          "unique_hlas": 22,
+          "unique_pmhcs": 100,
+          "unique_tcrs": 64915
+        },
+        "validation": {
+          "component_count": 28,
+          "file": "development_distance_aware_rebalanced_fold_3_validation.csv",
+          "fraction_of_tier": 0.17602701292564554,
+          "positive_pairs": 17881,
+          "sha256": "08ea3def4532a94886a77386846ef8bc808eba6c78670b2eb145af8f5563ed4c",
+          "unique_epitopes": 33,
+          "unique_hlas": 8,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 16584
+        }
+      },
+      "same_hla_train_reference_coverage": 0.9705882352941176,
+      "test_bucket": "bucket_2",
+      "test_queries_with_same_hla_train_reference": 33,
+      "test_query_count": 34,
+      "train_buckets": [
+        "bucket_0",
+        "bucket_1",
+        "bucket_4"
+      ],
+      "validation_bucket": "bucket_3"
+    },
+    "fold_4": {
+      "cross_partition_similarity": {
+        "maximum_similarity": 0.5,
+        "pairwise": {
+          "train_vs_test": {
+            "left_peptide": "CINGVCWTV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "VISNDVCAQV"
+          },
+          "train_vs_validation": {
+            "left_peptide": "ALAGIGILTV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "FLASKIGRLV"
+          },
+          "validation_vs_test": {
+            "left_peptide": "HLKRNIVV",
+            "maximum_similarity": 0.4444444444444444,
+            "right_peptide": "YVLDHLIVV"
+          }
+        }
+      },
+      "index": 3,
+      "invariants": {
+        "combined_duplicate_interaction_keys": 0,
+        "combined_positive_pairs": 101581,
+        "cross_partition_maximum_similarity": 0.5,
+        "cross_partition_threshold_satisfied": true,
+        "extra_or_modified_full_records": 0,
+        "missing_full_records": 0,
+        "nonempty_partition_count": 3,
+        "peptide_overlap_across_partitions": 0,
+        "source_positive_pairs": 101581,
+        "split_component_count": 0
+      },
+      "partitions": {
+        "test": {
+          "component_count": 28,
+          "file": "development_distance_aware_rebalanced_fold_4_test.csv",
+          "fraction_of_tier": 0.17602701292564554,
+          "positive_pairs": 17881,
+          "sha256": "08ea3def4532a94886a77386846ef8bc808eba6c78670b2eb145af8f5563ed4c",
+          "unique_epitopes": 33,
+          "unique_hlas": 8,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 16584
+        },
+        "train": {
+          "component_count": 77,
+          "file": "development_distance_aware_rebalanced_fold_4_train.csv",
+          "fraction_of_tier": 0.6482413049684488,
+          "positive_pairs": 65849,
+          "sha256": "44364c85d8a616a2556870fa60ca7dbdd22cafb1b4d91087727e091fa6735fb9",
+          "unique_epitopes": 95,
+          "unique_hlas": 19,
+          "unique_pmhcs": 100,
+          "unique_tcrs": 63660
+        },
+        "validation": {
+          "component_count": 28,
+          "file": "development_distance_aware_rebalanced_fold_4_validation.csv",
+          "fraction_of_tier": 0.17573168210590565,
+          "positive_pairs": 17851,
+          "sha256": "0984f111e63e1a13b9d523f836b9c88768ceb9243e4f22109963d1e1e1d7d942",
+          "unique_epitopes": 33,
+          "unique_hlas": 13,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 17486
+        }
+      },
+      "same_hla_train_reference_coverage": 1.0,
+      "test_bucket": "bucket_3",
+      "test_queries_with_same_hla_train_reference": 34,
+      "test_query_count": 34,
+      "train_buckets": [
+        "bucket_0",
+        "bucket_1",
+        "bucket_2"
+      ],
+      "validation_bucket": "bucket_4"
+    },
+    "fold_5": {
+      "cross_partition_similarity": {
+        "maximum_similarity": 0.5,
+        "pairwise": {
+          "train_vs_test": {
+            "left_peptide": "ALAGIGILTV",
+            "maximum_similarity": 0.5,
+            "right_peptide": "FLASKIGRLV"
+          },
+          "train_vs_validation": {
+            "left_peptide": "LTSLTILQLY",
+            "maximum_similarity": 0.5,
+            "right_peptide": "LLSLFSLWL"
+          },
+          "validation_vs_test": {
+            "left_peptide": "LLDQLIEEV",
+            "maximum_similarity": 0.4444444444444444,
+            "right_peptide": "ILTGLNYEV"
+          }
+        }
+      },
+      "index": 4,
+      "invariants": {
+        "combined_duplicate_interaction_keys": 0,
+        "combined_positive_pairs": 101581,
+        "cross_partition_maximum_similarity": 0.5,
+        "cross_partition_threshold_satisfied": true,
+        "extra_or_modified_full_records": 0,
+        "missing_full_records": 0,
+        "nonempty_partition_count": 3,
+        "peptide_overlap_across_partitions": 0,
+        "source_positive_pairs": 101581,
+        "split_component_count": 0
+      },
+      "partitions": {
+        "test": {
+          "component_count": 28,
+          "file": "development_distance_aware_rebalanced_fold_5_test.csv",
+          "fraction_of_tier": 0.17573168210590565,
+          "positive_pairs": 17851,
+          "sha256": "0984f111e63e1a13b9d523f836b9c88768ceb9243e4f22109963d1e1e1d7d942",
+          "unique_epitopes": 33,
+          "unique_hlas": 13,
+          "unique_pmhcs": 34,
+          "unique_tcrs": 17486
+        },
+        "train": {
+          "component_count": 79,
+          "file": "development_distance_aware_rebalanced_fold_5_train.csv",
+          "fraction_of_tier": 0.5151455488723284,
+          "positive_pairs": 52329,
+          "sha256": "0c5dff4ee0183bbca5403df39a54e25b36434c7a7232c7a29bd861b5186b9e51",
+          "unique_epitopes": 97,
+          "unique_hlas": 14,
+          "unique_pmhcs": 101,
+          "unique_tcrs": 48505
+        },
+        "validation": {
+          "component_count": 26,
+          "file": "development_distance_aware_rebalanced_fold_5_validation.csv",
+          "fraction_of_tier": 0.3091227690217659,
+          "positive_pairs": 31401,
+          "sha256": "7b9ef29945944d3bab17f80b8b942863dbba7f52710abc36aae69f2828ae0260",
+          "unique_epitopes": 31,
+          "unique_hlas": 13,
+          "unique_pmhcs": 33,
+          "unique_tcrs": 31347
+        }
+      },
+      "same_hla_train_reference_coverage": 0.7941176470588235,
+      "test_bucket": "bucket_4",
+      "test_queries_with_same_hla_train_reference": 27,
+      "test_query_count": 34,
+      "train_buckets": [
+        "bucket_1",
+        "bucket_2",
+        "bucket_3"
+      ],
+      "validation_bucket": "bucket_0"
+    }
+  },
+  "generation_sha256": "42436413c101218ba4014af70b4c2c75afbd570d6b836e159ef5488ed6518118",
+  "graph": {
+    "component_count": 133,
+    "edge_count": 35,
+    "largest_component_peptide_count": 8,
+    "largest_component_record_count": 29695,
+    "node_count": 161,
+    "pairwise_comparison_count": 12880
+  },
+  "invariants": {
+    "bucket_duplicate_interaction_keys": 0,
+    "bucket_positive_pairs": 101581,
+    "components_tested_exactly_once": true,
+    "cross_partition_maximum_similarity": 0.5,
+    "cross_partition_threshold_satisfied": true,
+    "fold_count": 5,
+    "peptides_tested_exactly_once": true,
+    "records_present_once_per_fold": true,
+    "records_tested_exactly_once": true,
+    "source_positive_pairs": 101581
+  },
+  "models_trained_or_evaluated": false,
+  "negative_samples_generated": false,
+  "rotation": {
+    "test_bucket_offset": 0,
+    "validation_bucket_offset": 1
+  },
+  "schema_version": 1,
+  "seed": 13,
+  "similarity": {
+    "definition": "1 - levenshtein_distance / max_sequence_length",
+    "edge_rule": "similarity > threshold",
+    "threshold": 0.5
+  },
+  "source": {
+    "path": "data/processed/positive_pairs_development.csv",
+    "positive_pairs": 101581,
+    "sha256": "e4baa17565dd43c9aba551117181525f627812c4f1c5a2b0b7fb4bf6b5ed4ac7",
+    "unique_epitopes": 161,
+    "unique_hlas": 23,
+    "unique_pmhcs": 168
+  },
+  "status": "active",
+  "supersedes": {
+    "existing_artifacts_preserved": true,
+    "manifest": {
+      "path": "data/splits/distance_aware_5fold/distance_aware_5fold_positive_splits_manifest.json",
+      "sha256": "615cc5cf41dd1debd3cfe52ec3f9131c83b3b34de9fee5543a77fb431b882a78"
+    },
+    "marker": {
+      "path": "data/splits/distance_aware_5fold/SUPERSEDED.json",
+      "sha256": "85ea3a7f77e690b6c30f5c791867c787693048763284607d27792ad501a44762"
+    }
+  },
+  "tier": "development"
+}

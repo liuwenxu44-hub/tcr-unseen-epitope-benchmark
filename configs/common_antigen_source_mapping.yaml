@@ -1,0 +1,157 @@
+schema_version: 1
+mapping_version: "1.0.0"
+status: "Post-analysis descriptive harmonization; not confirmatory"
+creation_base_commit: "1061f3a35af6176555a527ef83c078a91648d1ee"
+creation_commit: "1061f3a35af6176555a527ef83c078a91648d1ee"
+creation_commit_role: "Clean project commit from which this post-analysis mapping amendment was created"
+creation_date: "2026-07-24"
+
+intended_use:
+  - "Figure S1E descriptive cohort composition"
+  - "Descriptive cohort summaries in tables and captions"
+
+prohibited_use:
+  - "Pre-scoring protocol or confirmatory subgroup definition"
+  - "Model training, selection, calibration, scoring, or threshold selection"
+  - "Reanalysis or reinterpretation of existing model performance"
+  - "Post hoc antigen-source subgroup effect claims"
+
+frozen_category_source:
+  path: "configs/external_iedb_audit.yaml"
+  commit: "ee2d00a3f672082dca866a04352863eaa0a2ea34"
+  sha256: "9893057ba6551485c7ebd59f98bcb3b95f71b4125651413c1299a4dce54ce3d8"
+  field_selector: "antigen_source_categories plus implicit unknown_source fallback"
+
+frozen_categories:
+  - "tumor_associated"
+  - "self_antigen"
+  - "pathogen_or_nonself"
+  - "other_nonself"
+  - "unknown_source"
+
+normalization:
+  trim_leading_and_trailing_whitespace: true
+  collapse_internal_whitespace: true
+  lowercase_for_exact_lookup: true
+  pipe_delimiters_preserved: true
+
+unknown_handling:
+  category: "unknown_source"
+  policy: "Missing, blank, uninformative, or unmapped exact values are assigned to unknown_source."
+  reviewer_status: "CONSERVATIVE_UNKNOWN"
+
+query_resolution:
+  key: ["epitope", "hla"]
+  rule: "all_record_categories_must_agree_else_unknown_source"
+  majority_vote_allowed: false
+  explanation: "A query retains its shared record category only when every positive record agrees; any cross-category conflict is conservatively assigned to unknown_source."
+
+source_files:
+  iedb_positive_cohort:
+    path: "data/external/iedb_strict_cap100/positives.csv"
+    commit: "0c27f9a2d92cf96eb06f0c5d45a1e30e19d843d9"
+    sha256: "8e23cc22e4917af576f547d2100400910b5de22b6419c3000c4c8fa6d2ad53f1"
+  iedb_cohort_manifest:
+    path: "data/external/iedb_strict_cap100/manifest.json"
+    commit: "0c27f9a2d92cf96eb06f0c5d45a1e30e19d843d9"
+    sha256: "3f7f797e26aa7743622e75d516b67459c988f254e18e0c1fad8e62d6333bf927"
+  iedb_mapping_implementation:
+    path: "src/tcrue/iedb_external_audit.py"
+    commit: "ee2d00a3f672082dca866a04352863eaa0a2ea34"
+    sha256: "5c5376dd9838f452ce9d428ea8073fae9b65f1c0c4e33923ef5f14d93309aef6"
+  iedb_stratified_analysis:
+    path: "results/external/iedb/evaluation/stratified_analysis.json"
+    commit: "658825b540c4739ebe4e350e38187a5e76588f51"
+    sha256: "f7c809de83759a82d5cd0cb38ccb91ee4bd525af119d56765303e3ed8a639da1"
+  iedb_stratified_manifest:
+    path: "results/external/iedb/evaluation/stratified_analysis_manifest.json"
+    commit: "658825b540c4739ebe4e350e38187a5e76588f51"
+    sha256: "6018572576e0bb28843658a17f3347748ffe809fd50ca771a60bc224acb664cc"
+  internal_positive_manifest:
+    path: "data/negatives/distance_aware_5fold_rebalanced_query_balanced_n1_cap100/query_balanced_n1_cap100_manifest.json"
+    commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+    sha256: "51a6f98a01b7348868d495378104834074b9c0fdc4d93281c0110f7415832ac3"
+  internal_positive_partitions:
+    - fold_id: "fold_1"
+      path: "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_1_test_query_balanced_cap100.csv"
+      commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+      sha256: "b703bd09338db9997ce118bdf23d82923d6fb04a231fdfb9e1f4e4a3e8ec1b1b"
+    - fold_id: "fold_2"
+      path: "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_2_test_query_balanced_cap100.csv"
+      commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+      sha256: "56fabff65d92865a6a91d731a0ed5af07594ac6a01237c9ff330afcea255c5c2"
+    - fold_id: "fold_3"
+      path: "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_3_test_query_balanced_cap100.csv"
+      commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+      sha256: "d970f9695a6107e728c4c6c8edde03b7c72d3c39b53f68d5d08ebab1c04065e1"
+    - fold_id: "fold_4"
+      path: "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_4_test_query_balanced_cap100.csv"
+      commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+      sha256: "c1e9248d10ebdf008c97d45110e18092abbeef1903638af91577be8d85b8443d"
+    - fold_id: "fold_5"
+      path: "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_5_test_query_balanced_cap100.csv"
+      commit: "08c7ab12fbc7acfbd29616c6a60f3e92e6f4b77b"
+      sha256: "d56f9c4a7a35b06116d16b2c3c53120572533f03b75ae4ded6fdcc39101dc93a"
+
+exact_value_mappings:
+  IEDB:
+    tumor_associated:
+      - "homo sapiens (human)|kita-kyushu lung cancer antigen 1"
+      - "homo sapiens (human)|melanoma-associated antigen 10"
+      - "homo sapiens (human)|melanoma-associated antigen c1"
+      - "homo sapiens (human)|wilms tumor protein"
+    self_antigen:
+      - "adamtsl5 protein, partial|homo sapiens (human)"
+      - "e6 protein [human papillomavirus 16]|human papillomavirus 16 (human papilloma virus type 16)"
+      - "ectonucleoside triphosphate diphosphohydrolase 6|homo sapiens (human)"
+      - "epstein-barr nuclear antigen 3|human herpesvirus 4 (epstein barr virus)"
+      - "fmr1 neighbor protein|homo sapiens (human)"
+      - "homo sapiens (human)|epidermal growth factor receptor, partial [homo sapiens]"
+      - "homo sapiens (human)|myosin-6"
+      - "homo sapiens (human)|protein stpg4"
+      - "homo sapiens (human)|ras-related protein rab-7b"
+      - "homo sapiens (human)|smcy"
+      - "homo sapiens (human)|tyrosinase"
+      - "homo sapiens (human)|unconventional myosin-vb"
+      - "human herpesvirus 4 (epstein barr virus)|lmp-2a [human gammaherpesvirus 4]"
+      - "human papillomavirus 16 (human papilloma virus type 16)|protein e6"
+      - "protein e6|human papillomavirus 18 (human papilloma virus type 18)"
+    pathogen_or_nonself:
+      - "genome polyprotein|hepatitis c virus"
+      - "hepatitis e virus type 3 (hepatitis e virus genotype 3)|polyprotein [hepatitis e virus]"
+      - "nucleoprotein|sars-cov2"
+      - "paslahepevirus balayani|polyprotein [hepatitis e virus]"
+      - "sars-cov2 omicron|surface glycoprotein [severe acute respiratory syndrome coronavirus 2]"
+      - "sars-cov2|spike glycoprotein"
+      - "severe acute respiratory syndrome coronavirus 2 usa/md-hp20874-piduywzowa/2021|surface glycoprotein [severe acute respiratory syndrome coronavirus 2]"
+    other_nonself: []
+    unknown_source:
+      - "unknown"
+  VDJdb:
+    tumor_associated: []
+    self_antigen:
+      - "homosapiens"
+    pathogen_or_nonself:
+      - "cmv"
+      - "coxsackievirusb"
+      - "denv"
+      - "ebv"
+      - "hadv2"
+      - "hbv"
+      - "hcov-hku1"
+      - "hcov-oc43"
+      - "hcv"
+      - "hiv-1"
+      - "hsv-2"
+      - "htlv-1"
+      - "influenzaa"
+      - "influenzaa|influenzab"
+      - "influenzab"
+      - "mcpyv"
+      - "rotavirusa"
+      - "sars-cov"
+      - "sars-cov-2"
+      - "vzv"
+      - "yfv"
+    other_nonself: []
+    unknown_source: []

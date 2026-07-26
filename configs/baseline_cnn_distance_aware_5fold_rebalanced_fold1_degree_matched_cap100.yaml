@@ -1,0 +1,72 @@
+schema_version: 1
+seed: 13
+
+experiment:
+  tier: development
+  positive_split_strategy: distance_aware
+  negative_strategy: DEGREE_MATCHED
+  fold_id: fold_1
+  query_balanced_cap: 100
+
+sequence:
+  tcr_max_length: 30
+  epitope_max_length: 15
+
+dataloader:
+  batch_size: 256
+  num_workers: 4
+  pin_memory: true
+  shuffle:
+    train: true
+    validation: false
+    test: false
+
+data:
+  positive_split_directory: data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100
+  negative_directory: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100
+  partition_files:
+    train:
+      positive: development_distance_aware_rebalanced_fold_1_train_query_balanced_cap100.csv
+      negative: development_distance_aware_rebalanced_fold_1_train_query_balanced_cap100_degree_matched.csv
+    validation:
+      positive: development_distance_aware_rebalanced_fold_1_validation_query_balanced_cap100.csv
+      negative: development_distance_aware_rebalanced_fold_1_validation_query_balanced_cap100_degree_matched.csv
+    test:
+      positive: development_distance_aware_rebalanced_fold_1_test_query_balanced_cap100.csv
+      negative: development_distance_aware_rebalanced_fold_1_test_query_balanced_cap100_degree_matched.csv
+
+validation:
+  fold_id: fold_1
+  degree_matched_manifest: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/degree_matched_manifest.json
+  degree_matched_manifest_sha256: e118d8bd655353cc2ff7287378ba0c75b370e8f6d25d97549dbb9b3ee5e6631d
+  positive_registry: data/processed/positive_pairs.csv
+  reference_training_config:
+    path: configs/baseline_cnn_distance_aware_5fold_rebalanced_fold1_query_balanced_n1_cap100.yaml
+    sha256: bd811ba900c52c05559e1e3001684e911e4516fe0abdeeeed322919087936978
+
+model:
+  aa_vocab_size: 22
+  aa_embedding_dim: 64
+  cnn_channels: 128
+  kernel_sizes: [3, 5]
+  hla_embedding_dim: 32
+  mlp_hidden_dims: [256, 64]
+  padding_idx: 0
+  dropout: 0.2
+  hla_vocab_size_source: training_partition
+
+optimizer:
+  name: Adam
+  learning_rate: 0.001
+
+training:
+  loss: BCEWithLogitsLoss
+  max_epochs: 30
+  early_stopping_metric: validation_query_macro_auprc
+  patience: 5
+
+runtime:
+  device: auto
+
+output:
+  run_dir: results/baseline_cnn/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/fold_1

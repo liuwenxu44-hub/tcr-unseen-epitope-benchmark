@@ -1,0 +1,84 @@
+{
+  "branch": "phase13-model-card-limitations",
+  "generation_base_commit": "e22763a58d4815168a21747891f330d007a2af45",
+  "generator": "scripts/build_model_card.py",
+  "inputs": [
+    {
+      "source_commit": "cbcd30261e83943679fab926d9cbb11c0afa0390",
+      "source_file": "results/final/result_registry.json",
+      "source_sha256": "776d7d006c26af79aae9e314f28679274802b4b9c800fed13218a7ae5c4b7b90"
+    },
+    {
+      "source_commit": "cbcd30261e83943679fab926d9cbb11c0afa0390",
+      "source_file": "results/final/freeze_manifest.json",
+      "source_sha256": "7c6e38f5e46500597879783e218e7f3b87c2ed4c0edb7c91b36123c51f4bcd27"
+    },
+    {
+      "source_commit": "68e75cb87a56c2c75bef831de622d3bfb8cb4c3d",
+      "source_file": "results/external/iedb/external_result_registry.json",
+      "source_sha256": "586b2a21326679b7174d3c37019d1f4f9ddd481a47a41f7a45c871600683260c"
+    },
+    {
+      "source_commit": "68e75cb87a56c2c75bef831de622d3bfb8cb4c3d",
+      "source_file": "results/external/iedb/external_freeze_manifest.json",
+      "source_sha256": "4c3daff444205af63f2564604a6d2617fe81f465e6ca24a28e40c14fa673e50a"
+    },
+    {
+      "source_commit": "e22763a58d4815168a21747891f330d007a2af45",
+      "source_file": "results/final/unified_internal_external_results.csv",
+      "source_sha256": "53ad598d9a5078704d03746315e49d1af0449ac0015f2079a54ace7699af1bf9"
+    },
+    {
+      "source_commit": "e22763a58d4815168a21747891f330d007a2af45",
+      "source_file": "results/final/unified_internal_external_results.json",
+      "source_sha256": "391984bf6b3e305b164f7060bb805625081fa9e778d9cfdbd37aa6ef52523c48"
+    },
+    {
+      "source_commit": "e22763a58d4815168a21747891f330d007a2af45",
+      "source_file": "results/final/unified_results_provenance.json",
+      "source_sha256": "a7d1be6fe5ffa616166f0ac57ecaa68ac6128a758ffa514f2ec7d422d91a1ba4"
+    },
+    {
+      "source_commit": "d11979270359a4102a7eef21063649e58323096e",
+      "source_file": "results/final/environment_manifest.json",
+      "source_sha256": "3b9f06af7c54726c76f7dc96dec147f2f32f231f90ef577e7c502c367d0d5ae8"
+    },
+    {
+      "source_commit": "1966937b49f47e37abbbca27d28a6581c7219ce9",
+      "source_file": "results/final/project_scope_freeze.json",
+      "source_sha256": "003bb37757b7cd7f590580e89edce4055ada6efb724029bb47dda5b1aa3c3e27"
+    }
+  ],
+  "operations": {
+    "frozen_result_modification": false,
+    "plotting": false,
+    "scoring": false,
+    "statistical_recalculation": false,
+    "training": false
+  },
+  "outputs": {
+    "limitations.md": {
+      "path": "docs/limitations.md",
+      "sha256": "19e90d4234ee7134465203994dcd13969dbc318338649393563d6fb8f1e1c292"
+    },
+    "model_card.md": {
+      "path": "docs/model_card.md",
+      "sha256": "a9bedd94360d532c1d682715d4c54e799c20bfccb2d1063d95377774e57be3b0"
+    },
+    "model_card_provenance.json": {
+      "path": "results/final/model_card_provenance.json",
+      "sha256": "49c55b0a83cc71d8be967b4f3a70e16768b316aa8efb6b56f63a0cd241954c10"
+    }
+  },
+  "schema_version": 1,
+  "validation": {
+    "claim_boundary_check": "passed",
+    "environment_install_status": "passed",
+    "external_registry_status": "passed",
+    "internal_external_separation": "passed",
+    "internal_registry_status": "passed",
+    "numeric_claim_traceability": "passed",
+    "scope_status": "frozen",
+    "unified_traceability_status": "passed"
+  }
+}

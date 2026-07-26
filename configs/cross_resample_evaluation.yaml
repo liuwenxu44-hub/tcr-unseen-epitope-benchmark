@@ -1,0 +1,29 @@
+schema_version: 1
+experiment:
+  tier: development
+  split: distance_aware_5fold_rebalanced
+  positive_sampling: query_balanced_cap100
+  negative_strategy: degree_matched_resamples
+  evaluation: cross_negative_resample
+
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+resample_ids: [resample_1, resample_2, resample_3, resample_4, resample_5]
+methods: [additive_only, orthogonalized_interaction]
+metrics: [pooled_auroc, pooled_auprc, macro_auroc, macro_auprc]
+
+inputs:
+  training_config:
+    path: configs/interaction_resample_robustness.yaml
+    sha256: c48f3bebd464603490c0898a67b1bcabdb6915a74c8e25849df3712b3f3f930e
+  training_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_interaction_resample_robustness/negative_resample_summary.json
+    sha256: fcaac1e57a9cba30bfd7599de9915c7f6a6f5def25444b14a8b9f2dd7407bf72
+  resample_manifest:
+    path: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_resamples/degree_matched_resamples_manifest.json
+    sha256: 5b9fcbb080636c765c2d29a75452127f4da2a5f53eee43cc096a9e3de5b259c1
+
+output:
+  directory: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_cross_resample_evaluation
+  matrix_csv: cross_resample_metrics.csv
+  summary_json: summary.json
+  report_md: cross_resample_report.md

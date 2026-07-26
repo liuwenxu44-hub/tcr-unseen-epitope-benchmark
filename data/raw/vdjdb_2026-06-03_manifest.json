@@ -1,0 +1,16 @@
+{
+  "database": "VDJdb",
+  "content_version": "2026-06-03",
+  "release_tag": "2026-06-11-ZENODO",
+  "download_url": "https://github.com/antigenomics/vdjdb-db/releases/download/2026-06-11-ZENODO/vdjdb-2026-06-03.zip",
+  "release_published_at_utc": "2026-06-11T10:01:20Z",
+  "archive": {
+    "file": "vdjdb-2026-06-03.zip",
+    "sha256": "9ae7724ab2ce9fdb09b1fb82a90c7462f75269f14f669238f8c154a80239cfc1"
+  },
+  "full_table": {
+    "archive_member": "vdjdb-2026-06-03/vdjdb_full.txt",
+    "file": "vdjdb_full_2026-06-03.tsv",
+    "sha256": "55ee89fa1a0109f52f60fe30fd47c2f6842f94a0476d034b2d98b2511748bddc"
+  }
+}

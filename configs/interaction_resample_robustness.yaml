@@ -1,0 +1,77 @@
+schema_version: 1
+experiment:
+  tier: development
+  split: distance_aware_5fold_rebalanced
+  positive_sampling: query_balanced_cap100
+  negative_strategy: degree_matched_resamples
+  comparison: orthogonalized_interaction_minus_additive_only
+
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+resample_ids: [resample_1, resample_2, resample_3, resample_4, resample_5]
+seed: 13
+
+model:
+  estimator: sklearn.linear_model.LogisticRegression
+  penalty: l2
+  C: 1.0
+  class_weight: null
+  max_iter: 5000
+  solver: liblinear
+  random_state_source: seed
+
+features:
+  additive_only:
+    amino_acids: ACDEFGHIKLMNPQRSTVWY
+    tcr_kmers: [1, 2]
+    epitope_kmers: [1, 2]
+    normalized_frequencies: true
+    include_tcr_length: true
+    include_epitope_length: true
+    hla_encoding: train_only_one_hot
+    unknown_hla_token: UNK_HLA
+    interaction_features: []
+    forbidden:
+      - tcr_epitope_interaction
+      - amino_acid_composition_interaction
+  orthogonalized_interaction:
+    amino_acids: ACDEFGHIKLMNPQRSTVWY
+    tcr_kmers: [1, 2]
+    epitope_kmers: [1, 2]
+    normalized_frequencies: true
+    include_tcr_length: true
+    include_epitope_length: true
+    hla_encoding: train_only_one_hot
+    unknown_hla_token: UNK_HLA
+    interaction:
+      type: amino_acid_composition_outer_product
+      dimensions: [20, 20]
+      raw_formula: M = x @ y.T
+      centering_matrix: H = I - 11.T / 20
+      transformation: M_centered = H @ M @ H
+      feature_count: 400
+      orthogonality_tolerance: 1.0e-12
+
+data:
+  resample_manifest:
+    path: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_resamples/degree_matched_resamples_manifest.json
+    sha256: 5b9fcbb080636c765c2d29a75452127f4da2a5f53eee43cc096a9e3de5b259c1
+
+references:
+  additive_config:
+    path: configs/degree_matched_additive_logistic_5fold.yaml
+    sha256: 4254a426265aa66defb4d69da87358a24aa3f3e7c2af7f37a7ce9030c1cce6c5
+  orthogonalized_config:
+    path: configs/degree_matched_orthogonalized_logistic_5fold.yaml
+    sha256: bbf8453a291c1971e3e78c493108e4dd4637ef05660c3c5d1ad7d2ebfa53d9d2
+  resample_0_additive_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_additive_only/summary.json
+    sha256: 7ba2849c18f23abd87cbb0c253e10a3e3d917c754665452d7e145eebe137dd90
+  resample_0_orthogonalized_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_orthogonalized_interaction/summary.json
+    sha256: 4937bd47796cdd43b068f9a696bed80c4b84b10645af8d2b5d0e453fd79c06b6
+
+output:
+  directory: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_interaction_resample_robustness
+  summary_csv: negative_resample_summary.csv
+  summary_json: negative_resample_summary.json
+  report_md: negative_resample_report.md

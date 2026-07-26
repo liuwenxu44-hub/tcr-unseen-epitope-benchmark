@@ -1,0 +1,120 @@
+{
+  "analysis_source_commit": "e12bd10eef6d9da37f408eada2f0cbbe84e8642a",
+  "audit": {
+    "all_input_sha256_match": true,
+    "antigen_source_categories": [
+      "tumor_associated",
+      "self_antigen",
+      "pathogen_or_nonself",
+      "other_nonself",
+      "unknown_source"
+    ],
+    "antigen_source_mapping_reproduces_cohort_manifest": true,
+    "cohort_prediction_keys_paired": true,
+    "cohort_query_count": 141,
+    "cohort_record_count": 1612,
+    "definitions": {
+      "antigen_source": "pre-scoring external_iedb_audit.yaml keyword mapping applied by the existing _source_category implementation",
+      "hla_seen_vs_unseen": "record hla_seen_in_vdjdb annotation; HLA membership in the frozen complete VDJdb positive registry",
+      "tcr_seen_vs_unseen": "record tcr_seen_in_vdjdb annotation; TCR membership in the frozen complete VDJdb positive registry"
+    },
+    "prior_per_query_metrics_reproduced": true,
+    "stratifications_frozen_pre_scoring": [
+      "hla_seen_vs_unseen",
+      "tcr_seen_vs_unseen",
+      "antigen_source"
+    ]
+  },
+  "inputs": {
+    "antigen_source_mapping": {
+      "path": "configs/external_iedb_audit.yaml",
+      "sha256": "9893057ba6551485c7ebd59f98bcb3b95f71b4125651413c1299a4dce54ce3d8"
+    },
+    "cohort": {
+      "path": "data/external/iedb_strict_cap100/test.csv",
+      "sha256": "e2c3f0ec2625500c6bd09a769d3df2a9688a203fd27e5b9518464e0b5b0d8415"
+    },
+    "cohort_manifest": {
+      "path": "data/external/iedb_strict_cap100/manifest.json",
+      "sha256": "3f7f797e26aa7743622e75d516b67459c988f254e18e0c1fad8e62d6333bf927"
+    },
+    "ensemble_predictions": {
+      "path": "results/external/iedb/scoring/ensemble_predictions.csv",
+      "sha256": "310e5c1ade1753da413b5de4a1e2d069c9c7a0a72f00031bcb345e5227488546"
+    },
+    "evaluation_config": {
+      "path": "configs/external_iedb_evaluation.yaml",
+      "sha256": "cc0bce003e9ac0865d0d512d40202f77d365d94aabcdc3947e0dabd5897967b6"
+    },
+    "evaluation_manifest": {
+      "path": "results/external/iedb/evaluation/evaluation_manifest.json",
+      "sha256": "19be0f083b437829c264f80ac53c55a7f8392082edcdade0b2978b7d054ff454"
+    },
+    "evaluation_protocol": {
+      "path": "results/external/iedb/evaluation_protocol.json",
+      "sha256": "8770264e0a7df4b634eb8e54588248f09ccc2dc12c3153b03aecac34a41ad841"
+    },
+    "evaluation_protocol_manifest": {
+      "path": "results/external/iedb/evaluation_protocol_manifest.json",
+      "sha256": "6ea51aaed94df696ba2e4c74faf41eedfd925f7c7d33194f7ab166446b937d8b"
+    },
+    "external_per_query_metrics": {
+      "path": "results/external/iedb/evaluation/external_per_query_metrics.csv",
+      "sha256": "bc8565378a31a8d9427b285658e8029d1fec7bcf82e1bdfa87fc854b9fa708cd"
+    },
+    "scoring_manifest": {
+      "path": "results/external/iedb/scoring/scoring_manifest.json",
+      "sha256": "8ceef7e6528229e13d8f257f4ef2babbec9dc13edcfc3e26a3b6ad76dc534e6d"
+    }
+  },
+  "mode": "pre_specified_exploratory_external_stratified_analysis",
+  "operations": {
+    "calibration": false,
+    "figure_1_updated": false,
+    "hyperparameter_tuning": false,
+    "plotting": false,
+    "rescoring": false,
+    "significance_testing": false,
+    "threshold_selection": false,
+    "training": false
+  },
+  "outputs": {
+    "stratified_analysis.json": {
+      "path": "results/external/iedb/evaluation/stratified_analysis.json",
+      "rows": null,
+      "sha256": "f7c809de83759a82d5cd0cb38ccb91ee4bd525af119d56765303e3ed8a639da1"
+    },
+    "stratified_analysis_report.md": {
+      "path": "results/external/iedb/evaluation/stratified_analysis_report.md",
+      "rows": null,
+      "sha256": "a847a3cf194ec8113ffd5b9c0b89862a1918430f5248cf7b59e6a35c9289a35a"
+    },
+    "stratified_comparisons.csv": {
+      "path": "results/external/iedb/evaluation/stratified_comparisons.csv",
+      "rows": 32,
+      "sha256": "76742375371423eb7d97b5cb44b2703e9c39f97397662227f47d5b824c67b047"
+    },
+    "stratified_metrics.csv": {
+      "path": "results/external/iedb/evaluation/stratified_metrics.csv",
+      "rows": 72,
+      "sha256": "3e8f71735c3798366263fc8c0c241bab75e51a33e6953dab1ee11d8149a803ac"
+    }
+  },
+  "reproducibility": {
+    "all_deterministic_output_bytes_identical": true,
+    "complete_analysis_runs_compared": 2
+  },
+  "schema_version": 1,
+  "statistics": {
+    "bootstrap_type": "paired_query_cluster",
+    "confidence_level": 0.95,
+    "iterations": 10000,
+    "p_values_computed": false,
+    "seed": 13
+  },
+  "stratifications": [
+    "hla_seen_vs_unseen",
+    "tcr_seen_vs_unseen",
+    "antigen_source"
+  ]
+}

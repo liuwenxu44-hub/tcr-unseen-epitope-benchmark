@@ -1,0 +1,66 @@
+{
+  "audit": {
+    "all_source_and_input_sha256_verified": true,
+    "all_source_commits_recorded": true,
+    "all_table_values_trace_to_source_files": true,
+    "core_and_exploratory_statuses_separated": true,
+    "new_statistical_tests_performed": false,
+    "resampling_performed": false,
+    "rescoring_performed": false,
+    "status": "passed",
+    "training_performed": false
+  },
+  "branch": "phase11-freeze-main-results",
+  "core_definition": {
+    "cross_resample_matrix": "5x5",
+    "independent_negative_resamples": 5,
+    "methods": [
+      "additive_only_logistic",
+      "orthogonalized_interaction_logistic",
+      "cnn",
+      "sequence_similarity",
+      "tcr_only_logistic"
+    ],
+    "negative_strategy": "degree_matched",
+    "positive_sampling": "query_balanced_cap100",
+    "split": "distance_aware_5fold_rebalanced"
+  },
+  "exploratory_record_count": 9,
+  "freeze_base_commit": "503af248515c271c88a1d548aae131de98f02ed1",
+  "frozen_output_count": 5,
+  "frozen_outputs": {
+    "main_conclusions": {
+      "path": "results/final/main_conclusions.md",
+      "sha256": "5224932c290baa3d5586f4ad9f2cc62ec90bc04c67ada0154ec236efe11af980"
+    },
+    "main_results_table_csv": {
+      "path": "results/final/main_results_table.csv",
+      "sha256": "ec6e5128a5e58e24515b8f6e0d9a6d36aae4cd4ab5f487f971df07297e181851"
+    },
+    "main_results_table_md": {
+      "path": "results/final/main_results_table.md",
+      "sha256": "bd4159979d0426c7a682c8d9e60400b8b2557cf0329f6649d4c221086e27e15c"
+    },
+    "result_registry": {
+      "path": "results/final/result_registry.json",
+      "sha256": "776d7d006c26af79aae9e314f28679274802b4b9c800fed13218a7ae5c4b7b90"
+    }
+  },
+  "generator": {
+    "config": {
+      "path": "configs/freeze_main_results.yaml",
+      "sha256": "9765217637d10c5e3046186656ad2328fcf558715af2c9a64c6739ba0eaec99b"
+    },
+    "script": {
+      "path": "src/freeze_main_results.py",
+      "sha256": "ad661034334236dc1b2e749a93c0c98a61391fa6e2a5732426e0a483da174967"
+    }
+  },
+  "schema_version": 1,
+  "source_file_count": 12,
+  "table_row_count": 44,
+  "traceability": {
+    "all_rows_trace_to_source_values": true,
+    "checked_row_count": 44
+  }
+}

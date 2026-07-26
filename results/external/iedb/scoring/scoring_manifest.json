@@ -1,0 +1,106 @@
+{
+  "audit": {
+    "all_model_probabilities_valid": true,
+    "all_model_rows_scored": true,
+    "ensemble_prediction_rows": 8060,
+    "maximum_ensemble_mean_error": 0.0,
+    "raw_prediction_rows": 104780,
+    "similarity_available_query_count": 112,
+    "similarity_query_count": 141,
+    "similarity_unavailable_explicit": true,
+    "similarity_unavailable_query_count": 29
+  },
+  "cohort": {
+    "negative_count": 806,
+    "positive_count": 806,
+    "query_count": 141,
+    "test_count": 1612
+  },
+  "inputs": {
+    "checkpoint_registry": {
+      "path": "results/external/iedb/external_checkpoint_registry.csv",
+      "sha256": "531ef4a8b93252dc5e6e9dcf878a659ee5966c6a5eb9c6a5e62694084bd94cbe"
+    },
+    "cohort_manifest": {
+      "path": "data/external/iedb_strict_cap100/manifest.json",
+      "sha256": "3f7f797e26aa7743622e75d516b67459c988f254e18e0c1fad8e62d6333bf927"
+    },
+    "cohort_test": {
+      "feature_columns": [
+        "record_id",
+        "interaction_key",
+        "query_id",
+        "tcr_cdr3_beta",
+        "epitope",
+        "hla"
+      ],
+      "label_free_feature_table_sha256": "335078ba069da34793fe99ee38bbd1268e760ddfb13c5a6fbf746e1a363a72d8",
+      "label_loaded_into_feature_table": false,
+      "path": "data/external/iedb_strict_cap100/test.csv",
+      "source_file_sha256": "e2c3f0ec2625500c6bd09a769d3df2a9688a203fd27e5b9518464e0b5b0d8415"
+    },
+    "evaluation_config": {
+      "path": "configs/external_iedb_evaluation.yaml",
+      "sha256": "cc0bce003e9ac0865d0d512d40202f77d365d94aabcdc3947e0dabd5897967b6"
+    }
+  },
+  "mode": "blind_external_scoring_without_performance_evaluation",
+  "operations": {
+    "hyperparameter_tuning": false,
+    "performance_metrics": false,
+    "plotting": false,
+    "resampling": false,
+    "statistical_testing": false,
+    "training": false
+  },
+  "outputs": {
+    "ensemble_predictions": {
+      "path": "results/external/iedb/scoring/ensemble_predictions.csv",
+      "rows": 8060,
+      "sha256": "310e5c1ade1753da413b5de4a1e2d069c9c7a0a72f00031bcb345e5227488546"
+    },
+    "raw_model_predictions": {
+      "path": "results/external/iedb/scoring/raw_model_predictions.csv.gz",
+      "rows": 104780,
+      "sha256": "bdf2052111d36e4eec3aabfe8cd100d5b17c0b7e95e94ad9a36d9800c99025af"
+    },
+    "scoring_audit": {
+      "path": "results/external/iedb/scoring/scoring_audit.md",
+      "rows": null,
+      "sha256": "38ab53bac751a05880b85f3174156efcad8716f162a94a4865fffd5c31dae374"
+    },
+    "similarity_coverage": {
+      "path": "results/external/iedb/scoring/similarity_coverage.csv",
+      "rows": 141,
+      "sha256": "c6d1f7e5a45b544db3da9ec83902bcd223f8b6d39379434fb558693f2865f15d"
+    }
+  },
+  "protocol_freeze_commit": "f1170fd30a850834d220be45e2b4859914a8d230",
+  "registry_counts": {
+    "additive_only": 25,
+    "degree_matched_cnn": 5,
+    "degree_matched_tcr_only_logistic": 5,
+    "orthogonalized_interaction": 25,
+    "sequence_similarity": 5
+  },
+  "reproducibility": {
+    "all_output_sha256_identical": true,
+    "complete_scoring_runs_compared": 2,
+    "deterministic_gzip_mtime": 0
+  },
+  "schema_version": 1,
+  "scoring_source_commit": "5822583acf98f3e7dfb5d74a1580aca81111ffb1",
+  "validations": {
+    "all_four_model_methods_cover_every_record": true,
+    "checkpoint_paths_sizes_and_sha256_match": true,
+    "cohort_row_count_matches_manifest": true,
+    "ensemble_arithmetic_means_within_1e-12": true,
+    "initial_worktree_clean": true,
+    "per_record_raw_score_counts_match_protocol": true,
+    "prediction_files_contain_labels": false,
+    "probabilities_finite_and_in_unit_interval": true,
+    "similarity_cross_hla_fallback_used": false,
+    "similarity_same_hla_only": true,
+    "similarity_unavailable_explicit": true
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "artifact_counts": {
+    "additive_only_checkpoints": 25,
+    "degree_matched_cnn_checkpoints": 5,
+    "degree_matched_tcr_only_logistic_checkpoints": 5,
+    "evaluation_methods": 5,
+    "model_checkpoints": 60,
+    "orthogonalized_interaction_checkpoints": 25,
+    "registered_artifacts": 65,
+    "sequence_similarity_fold_references": 5
+  },
+  "cohort": {
+    "degree_matching_rate": 1.0,
+    "negative_count": 806,
+    "positive_count": 806,
+    "query_count": 141,
+    "query_degree_exact": true,
+    "tcr_degree_exact": true
+  },
+  "endpoints": {
+    "primary": {
+      "comparison": "orthogonalized_interaction_minus_additive_only",
+      "metric": "query_level_macro_auprc",
+      "multiplicity_status": "sole_primary_endpoint",
+      "population": "all_formal_cohort_queries"
+    },
+    "secondary": [
+      "query_level_macro_auroc",
+      "pooled_auroc",
+      "pooled_auprc"
+    ]
+  },
+  "exploratory_stratification": [
+    "hla_seen_vs_unseen",
+    "tcr_seen_vs_unseen",
+    "antigen_source"
+  ],
+  "freeze_date": "2026-07-17",
+  "freeze_timing": "pre-scoring",
+  "pre_scoring_declaration": {
+    "external_model_performance_viewed": false,
+    "figure_1_formal_update_allowed_before_external_validation": false,
+    "figure_1_status": "draft",
+    "frozen_before_any_external_scoring": true
+  },
+  "primary_models": {
+    "additive_only": {
+      "checkpoint_count": 25,
+      "probability_aggregation": "arithmetic_mean_across_all_25_checkpoints",
+      "role": "primary_comparator"
+    },
+    "checkpoint_source": {
+      "path": "results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_interaction_resample_robustness/negative_resample_summary.json",
+      "sha256": "fcaac1e57a9cba30bfd7599de9915c7f6a6f5def25444b14a8b9f2dd7407bf72"
+    },
+    "orthogonalized_interaction": {
+      "checkpoint_count": 25,
+      "probability_aggregation": "arithmetic_mean_across_all_25_checkpoints",
+      "role": "primary"
+    }
+  },
+  "protocol_status": "frozen",
+  "restrictions": {
+    "external_data_calibration": false,
+    "external_data_hyperparameter_tuning": false,
+    "external_data_model_selection": false,
+    "external_data_threshold_selection": false,
+    "plotting_performed_by_protocol_freeze": false,
+    "predictions_generated_by_protocol_freeze": false,
+    "resampling_performed_by_protocol_freeze": false,
+    "scoring_performed_by_protocol_freeze": false,
+    "statistical_testing_performed_by_protocol_freeze": false,
+    "training_performed_by_protocol_freeze": false
+  },
+  "schema_version": 1,
+  "secondary_controls": {
+    "degree_matched_cnn": {
+      "checkpoint_count": 5,
+      "checkpoint_source": {
+        "path": "results/baseline_cnn/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/five_fold_summary.json",
+        "sha256": "cbc17aa1772273f1fa438605274f54118d1150373e0823e43d94648760118d91"
+      },
+      "probability_aggregation": "arithmetic_mean_across_5_folds"
+    },
+    "degree_matched_tcr_only_logistic": {
+      "checkpoint_count": 5,
+      "checkpoint_source": {
+        "path": "results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_tcr_only/summary.json",
+        "sha256": "09e451301bf18a7e73a9011e3ff56ab60d9c64235891bd3f16121871b8c04e28"
+      },
+      "probability_aggregation": "arithmetic_mean_across_5_folds"
+    },
+    "sequence_similarity": {
+      "algorithm": {
+        "path": "src/retrieval_similarity.py",
+        "sha256": "53797fca37f276eba99df5bf608565a67d450bc14e0a478d214b6a26dca05ed6"
+      },
+      "config": {
+        "path": "configs/degree_matched_5fold_similarity.yaml",
+        "sha256": "a8c13af2be2538b58a03e8a1eafecc2aa79df2f3726dd92f0f9662f679b2d9d3"
+      },
+      "cross_hla_fallback": false,
+      "fold_reference_count": 5,
+      "reference_source": {
+        "path": "results/similarity_baseline/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/summary.json",
+        "sha256": "c13031162db0bb53402b7ca98344d4d5bb10ca4fc2d88b4b4238c3854207960f"
+      },
+      "same_hla_only": true,
+      "score_aggregation": "arithmetic_mean_across_available_folds",
+      "unavailable_rule": "unavailable_when_no_fold_has_same_hla_training_reference"
+    }
+  },
+  "similarity_comparison": {
+    "population": "common_evaluable_queries_only",
+    "report_coverage": true
+  },
+  "source_commit": "0c27f9a2d92cf96eb06f0c5d45a1e30e19d843d9",
+  "statistics": {
+    "bootstrap": {
+      "confidence_level": 0.95,
+      "iterations": 10000,
+      "seed": 13,
+      "type": "paired_query_cluster"
+    },
+    "independent_sampling_unit": "query",
+    "multiple_testing": {
+      "primary_metric": "unadjusted_pre_specified_primary",
+      "secondary_metrics": "holm_across_three_secondary_endpoints"
+    },
+    "permutation": {
+      "alternative": "two_sided",
+      "iterations": 10000,
+      "seed": 13,
+      "type": "query_level_paired"
+    },
+    "report": [
+      "difference",
+      "confidence_interval_95",
+      "two_sided_p_value"
+    ]
+  },
+  "stratification_rule": "exploratory_only_and_never_replaces_full_cohort_primary_analysis"
+}

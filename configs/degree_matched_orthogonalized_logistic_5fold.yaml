@@ -1,0 +1,59 @@
+schema_version: 1
+seed: 13
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+
+experiment:
+  tier: development
+  positive_split_strategy: distance_aware_5fold_rebalanced_query_balanced_cap100
+  negative_strategy: degree_matched
+  query_balanced_cap: 100
+  model: orthogonalized_interaction_logistic
+
+features:
+  amino_acids: ACDEFGHIKLMNPQRSTVWY
+  tcr_kmers: [1, 2]
+  epitope_kmers: [1, 2]
+  normalized_frequencies: true
+  include_tcr_length: true
+  include_epitope_length: true
+  hla_encoding: train_only_one_hot
+  unknown_hla_token: UNK_HLA
+  interaction:
+    type: amino_acid_composition_outer_product
+    dimensions: [20, 20]
+    raw_formula: M = x @ y.T
+    centering_matrix: H = I - 11.T / 20
+    transformation: M_centered = H @ M @ H
+    feature_count: 400
+    orthogonality_tolerance: 1.0e-12
+
+model:
+  estimator: sklearn.linear_model.LogisticRegression
+  penalty: l2
+  C: 1.0
+  class_weight: null
+  max_iter: 5000
+  solver: liblinear
+  random_state_source: seed
+
+data:
+  manifest:
+    path: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/degree_matched_manifest.json
+    sha256: e118d8bd655353cc2ff7287378ba0c75b370e8f6d25d97549dbb9b3ee5e6631d
+
+references:
+  degree_matched_full_config:
+    path: configs/degree_matched_full_logistic_5fold.yaml
+    sha256: 0fee3fcad3b21fa42c31fff593597a0c907570a9bff5bd9e5e795602e79939e2
+  additive_only_config:
+    path: configs/degree_matched_additive_logistic_5fold.yaml
+    sha256: 4254a426265aa66defb4d69da87358a24aa3f3e7c2af7f37a7ce9030c1cce6c5
+  degree_matched_full_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/summary.json
+    sha256: f4867d020197b8b39ff84316a2622b63009de4c965da7c8c54c9558a291a82bf
+  additive_only_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_additive_only/summary.json
+    sha256: 7ba2849c18f23abd87cbb0c253e10a3e3d917c754665452d7e145eebe137dd90
+
+output:
+  directory: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_orthogonalized_interaction

@@ -1,0 +1,165 @@
+{
+  "source": {
+    "database": "VDJdb",
+    "content_version": "2026-06-03",
+    "input_file": "vdjdb_full_2026-06-03.tsv",
+    "input_sha256": "55ee89fa1a0109f52f60fe30fd47c2f6842f94a0476d034b2d98b2511748bddc"
+  },
+  "filters": {
+    "species": "HomoSapiens",
+    "mhc_class": "MHCI",
+    "min_tcr_length": 5,
+    "max_tcr_length": 30,
+    "min_epitope_length": 8,
+    "max_epitope_length": 15,
+    "require_canonical_tcr": true,
+    "min_pmhc_positives": 1
+  },
+  "rows": {
+    "raw": 192753,
+    "accepted_before_deduplication": 145097,
+    "unique_pairs_before_frequency_filter": 117615,
+    "output_positive_pairs": 117615,
+    "duplicate_source_rows_collapsed": 27482,
+    "rejected": {
+      "invalid_epitope": 5,
+      "invalid_tcr": 25099,
+      "non_human": 16623,
+      "noncanonical_tcr": 83,
+      "not_mhci": 5846
+    }
+  },
+  "output": {
+    "unique_tcrs": 107932,
+    "unique_epitopes": 1752,
+    "unique_hlas": 103,
+    "unique_pmhcs": 1922,
+    "pmhcs_by_minimum_positive_pairs": {
+      "1": 1922,
+      "5": 506,
+      "10": 294,
+      "20": 198,
+      "30": 159,
+      "50": 110,
+      "100": 65
+    },
+    "top_hlas": {
+      "HLA-A*02:01": 70863,
+      "HLA-A*03:01": 14608,
+      "HLA-A*02": 8686,
+      "HLA-B*07:02": 6174,
+      "HLA-A*11:01": 5400,
+      "HLA-B*08:01": 2286,
+      "HLA-A*01:01": 2064,
+      "HLA-A*24:02": 1930,
+      "HLA-E*01:03": 1411,
+      "HLA-B*57:01": 388,
+      "HLA-B*27:05": 377,
+      "HLA-B*27": 372,
+      "HLA-B*15:01": 344,
+      "HLA-B*42:01": 337,
+      "HLA-B*08": 331,
+      "HLA-B*35:01": 329,
+      "HLA-B*57": 227,
+      "HLA-C*12:02": 162,
+      "HLA-B*37:01": 122,
+      "HLA-A*68:01": 107
+    },
+    "top_antigen_sources": {
+      "HomoSapiens": 36141,
+      "CMV": 30200,
+      "EBV": 20341,
+      "InfluenzaA": 9826,
+      "SARS-CoV-2": 9088,
+      "HBV": 2790,
+      "HIV-1": 2577,
+      "YFV": 2148,
+      "M.tuberculosis": 1414,
+      "HCV": 1209,
+      "HTLV-1": 420,
+      "DENV": 399,
+      "MCPyV": 243,
+      "InfluenzaB": 237,
+      "SARS-CoV": 94,
+      "CoxsackievirusB": 84,
+      "HAdV2": 71,
+      "RotavirusA": 50,
+      "Synthetic": 35,
+      "HSV-2": 35
+    },
+    "top_pmhcs": {
+      "SLLMWITQV|HLA-A*02:01": 29695,
+      "KLGGALQAK|HLA-A*03:01": 12667,
+      "NLVPMVATV|HLA-A*02:01": 9419,
+      "YVLDHLIVV|HLA-A*02:01": 7651,
+      "GLCTLVAML|HLA-A*02:01": 6419,
+      "GILGFVFTL|HLA-A*02:01": 4804,
+      "NLVPMVATV|HLA-A*02": 4039,
+      "TPRVTGGGAM|HLA-B*07:02": 2526,
+      "LPRRSGAAGA|HLA-B*07:02": 2130,
+      "GILGFVFTL|HLA-A*02": 2116,
+      "LLWNGPMAV|HLA-A*02:01": 2009,
+      "LVVDFSQFSR|HLA-A*11:01": 1852,
+      "LLLDRLNQL|HLA-A*02:01": 1717,
+      "AVFDRKSDAK|HLA-A*11:01": 1644,
+      "RAKFKQLL|HLA-B*08:01": 1435,
+      "VMATRRNVL|HLA-E*01:03": 1178,
+      "YLQPRTFLL|HLA-A*02:01": 1019,
+      "ELAGIGILTV|HLA-A*02": 969,
+      "STLPETAVVRR|HLA-A*11:01": 914,
+      "RVRAYTYSK|HLA-A*03:01": 888,
+      "LLAGIGTVPI|HLA-A*02:01": 883,
+      "NYNYLYRLF|HLA-A*24:02": 706,
+      "SPRWYFYYL|HLA-B*07:02": 624,
+      "IVTDFSVIK|HLA-A*11:01": 542,
+      "ELAGIGILTV|HLA-A*02:01": 517,
+      "TTDPSFLGRY|HLA-A*01:01": 466,
+      "QYIKWPWYI|HLA-A*24:02": 456,
+      "RLRAEAQVK|HLA-A*03:01": 411,
+      "YLQPRTFLL|HLA-A*02": 411,
+      "VISNDVCAQV|HLA-A*02:01": 359
+    }
+  },
+  "quality_audit": {
+    "top_5_pmhc_pair_share": 0.5598860689537899,
+    "confidence_score_distribution": {
+      "0.0": 110198,
+      "1.0": 4031,
+      "2.0": 1383,
+      "3.0": 2003
+    },
+    "missing_assay_type_pairs": 0,
+    "classical_full_resolution_hla": {
+      "pattern": "^HLA-[ABC]\\*\\d{2,3}:\\d{2,3}(?::\\d{2,3})*$",
+      "positive_pairs": 106313,
+      "unique_pmhcs": 1833,
+      "pmhcs_by_minimum_positive_pairs": {
+        "1": 1833,
+        "5": 454,
+        "10": 252,
+        "20": 168,
+        "30": 135,
+        "50": 89,
+        "100": 51
+      }
+    },
+    "confidence_score_at_least_1_and_classical_full_resolution_hla": {
+      "positive_pairs": 6733,
+      "unique_pmhcs": 407,
+      "pmhcs_by_minimum_positive_pairs": {
+        "1": 407,
+        "5": 107,
+        "10": 80,
+        "20": 52,
+        "30": 35,
+        "50": 21,
+        "100": 13
+      }
+    }
+  },
+  "artifacts": {
+    "positive_pairs_csv": "positive_pairs.csv",
+    "pmhc_counts_csv": "pmhc_counts.csv",
+    "feasibility_report": "vdjdb_feasibility_2026-06-03.md"
+  }
+}

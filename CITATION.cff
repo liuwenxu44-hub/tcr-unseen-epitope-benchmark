@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or software, please cite this repository and the associated article."
+title: "TCR Unseen Epitope Benchmark"
+type: software
+version: 1.0.0
+date-released: 2026-07-26
+license: MIT
+repository-code: "https://github.com/liuwenxu44-hub/tcr-unseen-epitope-benchmark"
+url: "https://github.com/liuwenxu44-hub/tcr-unseen-epitope-benchmark"
+authors:
+  - family-names: Liu
+    given-names: Wenxu
+    orcid: "https://orcid.org/0009-0005-4107-0798"
+  - family-names: Zheng
+    given-names: Yipan
+  - family-names: Liu
+    given-names: Zhe
+keywords:
+  - T-cell receptor
+  - unseen epitope
+  - computational benchmark
+  - degree matching
+  - shortcut learning
+  - external validation
+abstract: >-
+  Reproducible code, frozen artifacts, and registered models for strict
+  TCR CDR3 beta-peptide-HLA interaction benchmarking with distance-aware
+  splits, degree-matched putative negatives, internal resampling, and
+  publication-independent IEDB validation.

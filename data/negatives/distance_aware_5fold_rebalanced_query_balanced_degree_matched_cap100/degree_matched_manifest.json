@@ -1,0 +1,654 @@
+{
+  "artifacts": {
+    "manifest_json": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/degree_matched_manifest.json",
+    "negative_directory": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100",
+    "report_md": "results/distance_aware_5fold_degree_matched/degree_matched_report.md"
+  },
+  "config": {
+    "path": "configs/degree_matched_negatives.yaml",
+    "sha256": "10a27f0c166aebe5860670e94c6a0b1094dbd24d16745704fd913ba7b0f6a27d"
+  },
+  "fold_count": 5,
+  "folds": {
+    "fold_1": {
+      "invariants": {
+        "all_partitions_exact": true,
+        "partition_interaction_intersections": {
+          "train_vs_test": 0,
+          "train_vs_validation": 0,
+          "validation_vs_test": 0
+        }
+      },
+      "partitions": {
+        "test": {
+          "audit": {
+            "candidate_edge_count": 54570,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 1760,
+            "minimum_legal_queries_per_tcr": 31,
+            "minimum_legal_tcrs_per_query": 1606,
+            "negative_count": 1760,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 1760,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 1761,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 33,
+            "unique_tcr_count": 1707
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_1_test_query_balanced_cap100_degree_matched.csv",
+            "rows": 1760,
+            "sha256": "abcf44d2a500d8ff0be7f6d531bff5dc60fd84d53bd15b791d9e69a0ddd532c9"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_1_test_query_balanced_cap100.csv",
+            "rows": 1760,
+            "sha256": "b703bd09338db9997ce118bdf23d82923d6fb04a231fdfb9e1f4e4a3e8ec1b1b"
+          }
+        },
+        "train": {
+          "audit": {
+            "candidate_edge_count": 633467,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 6435,
+            "minimum_legal_queries_per_tcr": 95,
+            "minimum_legal_tcrs_per_query": 5986,
+            "negative_count": 6435,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 6435,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 7195,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 102,
+            "unique_tcr_count": 6281
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_1_train_query_balanced_cap100_degree_matched.csv",
+            "rows": 6435,
+            "sha256": "6c9efe9eef7d1e27d124f9ceac972666287cf52d0c82c392f6381b19cfe5e33a"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_1_train_query_balanced_cap100.csv",
+            "rows": 6435,
+            "sha256": "843a0381792753e0c3f24354b486f51b79d6d8a5ba388a054a23e73910ef0698"
+          }
+        },
+        "validation": {
+          "audit": {
+            "candidate_edge_count": 64284,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2094,
+            "minimum_legal_queries_per_tcr": 28,
+            "minimum_legal_tcrs_per_query": 1749,
+            "negative_count": 2094,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2094,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2442,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 33,
+            "unique_tcr_count": 2022
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_1_validation_query_balanced_cap100_degree_matched.csv",
+            "rows": 2094,
+            "sha256": "6df53cb5b5c6dfe344fde07f37ecb52fd7aff8b44b6e71b4995e90ddfdabec2d"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_1_validation_query_balanced_cap100.csv",
+            "rows": 2094,
+            "sha256": "745a4946b08781a9d7332e1af7553a505271d936da5bc2d97980bb954340cf6d"
+          }
+        }
+      }
+    },
+    "fold_2": {
+      "invariants": {
+        "all_partitions_exact": true,
+        "partition_interaction_intersections": {
+          "train_vs_test": 0,
+          "train_vs_validation": 0,
+          "validation_vs_test": 0
+        }
+      },
+      "partitions": {
+        "test": {
+          "audit": {
+            "candidate_edge_count": 64396,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2094,
+            "minimum_legal_queries_per_tcr": 28,
+            "minimum_legal_tcrs_per_query": 1763,
+            "negative_count": 2094,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2094,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2429,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 33,
+            "unique_tcr_count": 2025
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_2_test_query_balanced_cap100_degree_matched.csv",
+            "rows": 2094,
+            "sha256": "8f01552ab9a1f8fd58eb17b8850e4cb216eeb7a3853b144b942ac99a2f83c81b"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_2_test_query_balanced_cap100.csv",
+            "rows": 2094,
+            "sha256": "56fabff65d92865a6a91d731a0ed5af07594ac6a01237c9ff330afcea255c5c2"
+          }
+        },
+        "train": {
+          "audit": {
+            "candidate_edge_count": 583069,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 6000,
+            "minimum_legal_queries_per_tcr": 96,
+            "minimum_legal_tcrs_per_query": 5633,
+            "negative_count": 6000,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 6000,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 6367,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 101,
+            "unique_tcr_count": 5836
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_2_train_query_balanced_cap100_degree_matched.csv",
+            "rows": 6000,
+            "sha256": "952be006d5d803e73b9b077381426f0297e3529ba6361a4f9e05a1c69f68dde3"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_2_train_query_balanced_cap100.csv",
+            "rows": 6000,
+            "sha256": "1c01e3992c67a4fe6e762fc3f30109000c4f8ae442f34020da06fc70f6f386e3"
+          }
+        },
+        "validation": {
+          "audit": {
+            "candidate_edge_count": 71246,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2195,
+            "minimum_legal_queries_per_tcr": 29,
+            "minimum_legal_tcrs_per_query": 2046,
+            "negative_count": 2195,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2195,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2262,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2162
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_2_validation_query_balanced_cap100_degree_matched.csv",
+            "rows": 2195,
+            "sha256": "fbd36de499cd34123acd3f87e74b87680b98b80bf672827dec0fae8b38eb42fd"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_2_validation_query_balanced_cap100.csv",
+            "rows": 2195,
+            "sha256": "7dbec52887f34445f0f0847435db9b3e12256d7c69bb88292f8b23bb5139ce44"
+          }
+        }
+      }
+    },
+    "fold_3": {
+      "invariants": {
+        "all_partitions_exact": true,
+        "partition_interaction_intersections": {
+          "train_vs_test": 0,
+          "train_vs_validation": 0,
+          "validation_vs_test": 0
+        }
+      },
+      "partitions": {
+        "test": {
+          "audit": {
+            "candidate_edge_count": 71238,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2195,
+            "minimum_legal_queries_per_tcr": 29,
+            "minimum_legal_tcrs_per_query": 2041,
+            "negative_count": 2195,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2195,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2270,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2162
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_3_test_query_balanced_cap100_degree_matched.csv",
+            "rows": 2195,
+            "sha256": "5f6010d8a09e27b098822fb8610caac5e702b7de5dc55a626304a49f14de3008"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_3_test_query_balanced_cap100.csv",
+            "rows": 2195,
+            "sha256": "d970f9695a6107e728c4c6c8edde03b7c72d3c39b53f68d5d08ebab1c04065e1"
+          }
+        },
+        "train": {
+          "audit": {
+            "candidate_edge_count": 567700,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 5966,
+            "minimum_legal_queries_per_tcr": 91,
+            "minimum_legal_tcrs_per_query": 5418,
+            "negative_count": 5966,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 5966,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 6600,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 100,
+            "unique_tcr_count": 5743
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_3_train_query_balanced_cap100_degree_matched.csv",
+            "rows": 5966,
+            "sha256": "dbac7e89468d12270ee611bb355781d538bdb691ddf46808753a02fe0a17e9a3"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_3_train_query_balanced_cap100.csv",
+            "rows": 5966,
+            "sha256": "8ea16b46e697f52a214ae585f24d884b469ee1a189befaf9e128f7d00f112632"
+          }
+        },
+        "validation": {
+          "audit": {
+            "candidate_edge_count": 69339,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2128,
+            "minimum_legal_queries_per_tcr": 30,
+            "minimum_legal_tcrs_per_query": 1927,
+            "negative_count": 2128,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2128,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2265,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2106
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_3_validation_query_balanced_cap100_degree_matched.csv",
+            "rows": 2128,
+            "sha256": "5556b0352c88bc44b15fd57ebbe5450fec934873b1e497ffb3ea896366f846b6"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_3_validation_query_balanced_cap100.csv",
+            "rows": 2128,
+            "sha256": "3aef09424c5e2911a0e86d969b8abd613c6e5fb819ac40d016a02713a615d459"
+          }
+        }
+      }
+    },
+    "fold_4": {
+      "invariants": {
+        "all_partitions_exact": true,
+        "partition_interaction_intersections": {
+          "train_vs_test": 0,
+          "train_vs_validation": 0,
+          "validation_vs_test": 0
+        }
+      },
+      "partitions": {
+        "test": {
+          "audit": {
+            "candidate_edge_count": 69578,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2128,
+            "minimum_legal_queries_per_tcr": 30,
+            "minimum_legal_tcrs_per_query": 1942,
+            "negative_count": 2128,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2128,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2264,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2113
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_4_test_query_balanced_cap100_degree_matched.csv",
+            "rows": 2128,
+            "sha256": "508de2a2abdedca4bd2a39061172a909d1130d1892080d77c5d02c7504cde866"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_4_test_query_balanced_cap100.csv",
+            "rows": 2128,
+            "sha256": "c1e9248d10ebdf008c97d45110e18092abbeef1903638af91577be8d85b8443d"
+          }
+        },
+        "train": {
+          "audit": {
+            "candidate_edge_count": 576846,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 6049,
+            "minimum_legal_queries_per_tcr": 90,
+            "minimum_legal_tcrs_per_query": 5481,
+            "negative_count": 6049,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 6049,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 6754,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 100,
+            "unique_tcr_count": 5836
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_4_train_query_balanced_cap100_degree_matched.csv",
+            "rows": 6049,
+            "sha256": "fece0cd4ebc09f67a3ea5535d28c02db51fe99130d5a6132ccff9dc8193e5b3c"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_4_train_query_balanced_cap100.csv",
+            "rows": 6049,
+            "sha256": "842234bda7130afdee9f4093431934223f66bd1ff52f723f930cec0520c77703"
+          }
+        },
+        "validation": {
+          "audit": {
+            "candidate_edge_count": 66936,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2112,
+            "minimum_legal_queries_per_tcr": 31,
+            "minimum_legal_tcrs_per_query": 1868,
+            "negative_count": 2112,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2112,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2220,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2034
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_4_validation_query_balanced_cap100_degree_matched.csv",
+            "rows": 2112,
+            "sha256": "323f1e978eb5a9dde4d3be8f63ffb98b351e64a42ebc8935d9df63e278784318"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_4_validation_query_balanced_cap100.csv",
+            "rows": 2112,
+            "sha256": "405b60a793daa9b063cfa0a87be8722ba8ee06dcaa779b3bbe8e7b175e6e2742"
+          }
+        }
+      }
+    },
+    "fold_5": {
+      "invariants": {
+        "all_partitions_exact": true,
+        "partition_interaction_intersections": {
+          "train_vs_test": 0,
+          "train_vs_validation": 0,
+          "validation_vs_test": 0
+        }
+      },
+      "partitions": {
+        "test": {
+          "audit": {
+            "candidate_edge_count": 67069,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 2112,
+            "minimum_legal_queries_per_tcr": 31,
+            "minimum_legal_tcrs_per_query": 1867,
+            "negative_count": 2112,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 2112,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 2223,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 34,
+            "unique_tcr_count": 2038
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_5_test_query_balanced_cap100_degree_matched.csv",
+            "rows": 2112,
+            "sha256": "2e5693a947b594b8079ac981436dc1f4f70888ee517c5b2a890e06cbb2af31fc"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_5_test_query_balanced_cap100.csv",
+            "rows": 2112,
+            "sha256": "d56f9c4a7a35b06116d16b2c3c53120572533f03b75ae4ded6fdcc39101dc93a"
+          }
+        },
+        "train": {
+          "audit": {
+            "candidate_edge_count": 626543,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 6417,
+            "minimum_legal_queries_per_tcr": 92,
+            "minimum_legal_tcrs_per_query": 5915,
+            "negative_count": 6417,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 6417,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 7333,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 101,
+            "unique_tcr_count": 6276
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_5_train_query_balanced_cap100_degree_matched.csv",
+            "rows": 6417,
+            "sha256": "d2bcea4578320e5e4645527f173b66b2708f901c4c36d7100bacd1d4fb0a8c0c"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_5_train_query_balanced_cap100.csv",
+            "rows": 6417,
+            "sha256": "8be49c803afd41e25facda2ffa300148b2a05f96a0814bf7e94a6f88fabca8ee"
+          }
+        },
+        "validation": {
+          "audit": {
+            "candidate_edge_count": 54570,
+            "duplicate_negative_interactions": 0,
+            "known_positive_registry_intersections": 0,
+            "matching_rate": 1.0,
+            "maximum_flow_value": 1760,
+            "minimum_legal_queries_per_tcr": 31,
+            "minimum_legal_tcrs_per_query": 1606,
+            "negative_count": 1760,
+            "negative_queries_outside_partition": 0,
+            "negative_tcrs_outside_partition": 0,
+            "positive_count": 1760,
+            "query_degree_exact": true,
+            "registry_rejected_candidate_count": 1761,
+            "status": "exact",
+            "tcr_degree_exact": true,
+            "unique_query_count": 33,
+            "unique_tcr_count": 1707
+          },
+          "exact_solution": true,
+          "negative_output": {
+            "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/development_distance_aware_rebalanced_fold_5_validation_query_balanced_cap100_degree_matched.csv",
+            "rows": 1760,
+            "sha256": "630bffa98817c9179f62ce4a9f57876507cd8f9399a19c1c7e31a550e418a598"
+          },
+          "positive_input": {
+            "path": "data/splits/distance_aware_5fold_rebalanced_query_balanced_cap100/development_distance_aware_rebalanced_fold_5_validation_query_balanced_cap100.csv",
+            "rows": 1760,
+            "sha256": "f1b3b88958b4602f05c2be69ecc23aba964097efd108e8f2585b3e7520d9efb2"
+          }
+        }
+      }
+    }
+  },
+  "inputs": {
+    "positive_manifest": {
+      "path": "data/negatives/distance_aware_5fold_rebalanced_query_balanced_n1_cap100/query_balanced_n1_cap100_manifest.json",
+      "sha256": "51a6f98a01b7348868d495378104834074b9c0fdc4d93281c0110f7415832ac3"
+    },
+    "positive_registry": {
+      "path": "data/processed/positive_pairs.csv",
+      "sha256": "daf194af47afa684199f795aca3433bb645f74d29356b7553ee55551c283bbdb"
+    }
+  },
+  "interaction_key": [
+    "tcr_cdr3_beta",
+    "epitope",
+    "hla"
+  ],
+  "invariants": {
+    "all_fold_partitions_have_exact_solution": true,
+    "all_query_degrees_exact": true,
+    "all_tcr_degrees_exact": true,
+    "duplicate_negative_interactions": 0,
+    "existing_n1_files_modified": false,
+    "known_positive_registry_intersections": 0,
+    "models_trained": false,
+    "partition_leakage": 0,
+    "source_positive_files_modified": false
+  },
+  "matching": {
+    "method": "dinic",
+    "ordering": "lexicographic_tcr_then_query",
+    "problem": "bipartite_b_matching",
+    "query_sink_capacity": "positive_query_degree",
+    "require_exact": true,
+    "solver": "scipy.sparse.csgraph.maximum_flow",
+    "source_tcr_capacity": "positive_tcr_degree",
+    "tcr_query_capacity": 1
+  },
+  "query_key": [
+    "epitope",
+    "hla"
+  ],
+  "reproducibility": {
+    "complete_rebuild_count": 2,
+    "first_rebuild_csv_sha256": {
+      "fold_1": {
+        "test": "abcf44d2a500d8ff0be7f6d531bff5dc60fd84d53bd15b791d9e69a0ddd532c9",
+        "train": "6c9efe9eef7d1e27d124f9ceac972666287cf52d0c82c392f6381b19cfe5e33a",
+        "validation": "6df53cb5b5c6dfe344fde07f37ecb52fd7aff8b44b6e71b4995e90ddfdabec2d"
+      },
+      "fold_2": {
+        "test": "8f01552ab9a1f8fd58eb17b8850e4cb216eeb7a3853b144b942ac99a2f83c81b",
+        "train": "952be006d5d803e73b9b077381426f0297e3529ba6361a4f9e05a1c69f68dde3",
+        "validation": "fbd36de499cd34123acd3f87e74b87680b98b80bf672827dec0fae8b38eb42fd"
+      },
+      "fold_3": {
+        "test": "5f6010d8a09e27b098822fb8610caac5e702b7de5dc55a626304a49f14de3008",
+        "train": "dbac7e89468d12270ee611bb355781d538bdb691ddf46808753a02fe0a17e9a3",
+        "validation": "5556b0352c88bc44b15fd57ebbe5450fec934873b1e497ffb3ea896366f846b6"
+      },
+      "fold_4": {
+        "test": "508de2a2abdedca4bd2a39061172a909d1130d1892080d77c5d02c7504cde866",
+        "train": "fece0cd4ebc09f67a3ea5535d28c02db51fe99130d5a6132ccff9dc8193e5b3c",
+        "validation": "323f1e978eb5a9dde4d3be8f63ffb98b351e64a42ebc8935d9df63e278784318"
+      },
+      "fold_5": {
+        "test": "2e5693a947b594b8079ac981436dc1f4f70888ee517c5b2a890e06cbb2af31fc",
+        "train": "d2bcea4578320e5e4645527f173b66b2708f901c4c36d7100bacd1d4fb0a8c0c",
+        "validation": "630bffa98817c9179f62ce4a9f57876507cd8f9399a19c1c7e31a550e418a598"
+      }
+    },
+    "second_rebuild_csv_sha256": {
+      "fold_1": {
+        "test": "abcf44d2a500d8ff0be7f6d531bff5dc60fd84d53bd15b791d9e69a0ddd532c9",
+        "train": "6c9efe9eef7d1e27d124f9ceac972666287cf52d0c82c392f6381b19cfe5e33a",
+        "validation": "6df53cb5b5c6dfe344fde07f37ecb52fd7aff8b44b6e71b4995e90ddfdabec2d"
+      },
+      "fold_2": {
+        "test": "8f01552ab9a1f8fd58eb17b8850e4cb216eeb7a3853b144b942ac99a2f83c81b",
+        "train": "952be006d5d803e73b9b077381426f0297e3529ba6361a4f9e05a1c69f68dde3",
+        "validation": "fbd36de499cd34123acd3f87e74b87680b98b80bf672827dec0fae8b38eb42fd"
+      },
+      "fold_3": {
+        "test": "5f6010d8a09e27b098822fb8610caac5e702b7de5dc55a626304a49f14de3008",
+        "train": "dbac7e89468d12270ee611bb355781d538bdb691ddf46808753a02fe0a17e9a3",
+        "validation": "5556b0352c88bc44b15fd57ebbe5450fec934873b1e497ffb3ea896366f846b6"
+      },
+      "fold_4": {
+        "test": "508de2a2abdedca4bd2a39061172a909d1130d1892080d77c5d02c7504cde866",
+        "train": "fece0cd4ebc09f67a3ea5535d28c02db51fe99130d5a6132ccff9dc8193e5b3c",
+        "validation": "323f1e978eb5a9dde4d3be8f63ffb98b351e64a42ebc8935d9df63e278784318"
+      },
+      "fold_5": {
+        "test": "2e5693a947b594b8079ac981436dc1f4f70888ee517c5b2a890e06cbb2af31fc",
+        "train": "d2bcea4578320e5e4645527f173b66b2708f901c4c36d7100bacd1d4fb0a8c0c",
+        "validation": "630bffa98817c9179f62ce4a9f57876507cd8f9399a19c1c7e31a550e418a598"
+      }
+    },
+    "sha256_identical": true
+  },
+  "schema_version": 1,
+  "tier": "development"
+}

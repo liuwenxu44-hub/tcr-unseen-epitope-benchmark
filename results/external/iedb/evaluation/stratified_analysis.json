@@ -1,0 +1,942 @@
+{
+  "never_replaces_full_141_query_primary_analysis": true,
+  "restrictions": {
+    "antigen_source_mapping_changes": false,
+    "category_merging": false,
+    "seen_unseen_definition_changes": false,
+    "small_antigen_source_query_threshold": 5,
+    "small_strata_descriptive_only": true
+  },
+  "schema_version": 1,
+  "statistics": {
+    "bootstrap_type": "paired_query_cluster",
+    "confidence_level": 0.95,
+    "iterations": 10000,
+    "p_values_computed": false,
+    "seed": 13
+  },
+  "status": "exploratory_pre_specified_stratified_analysis",
+  "stratifications": [
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.499963960947437,
+          "pooled_auroc": 0.49752537681762093,
+          "query_level_macro_auprc": 0.7052849524674145,
+          "query_level_macro_auroc": 0.5186301757509973
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.497046565470953,
+          "pooled_auroc": 0.48134147754773704,
+          "query_level_macro_auprc": 0.6724389356476707,
+          "query_level_macro_auroc": 0.4655699634720776
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5331595925066608,
+          "pooled_auroc": 0.5355377703849641,
+          "query_level_macro_auprc": 0.7137660070025348,
+          "query_level_macro_auroc": 0.538542427956528
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.499963960947437,
+          "bootstrap_query_count": 131,
+          "confidence_interval_95": [
+            0.009134006659269682,
+            0.0611842166186585
+          ],
+          "difference": 0.03319563155922378,
+          "orthogonalized": 0.5331595925066608
+        },
+        "pooled_auroc": {
+          "additive_only": 0.49752537681762093,
+          "bootstrap_query_count": 131,
+          "confidence_interval_95": [
+            0.01464132539147,
+            0.06657875343734886
+          ],
+          "difference": 0.03801239356734315,
+          "orthogonalized": 0.5355377703849641
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7052849524674145,
+          "bootstrap_query_count": 131,
+          "confidence_interval_95": [
+            -0.044339777240644675,
+            0.060049584219873726
+          ],
+          "difference": 0.00848105453512027,
+          "orthogonalized": 0.7137660070025348
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.5186301757509973,
+          "bootstrap_query_count": 131,
+          "confidence_interval_95": [
+            -0.08042602874095016,
+            0.11791305991502296
+          ],
+          "difference": 0.01991225220553061,
+          "orthogonalized": 0.538542427956528
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 131,
+        "macro_excluded_query_count": 0,
+        "negative_count": 766,
+        "positive_count": 766,
+        "publication_count": 33,
+        "query_count": 131
+      },
+      "similarity": {
+        "available_query_count": 112,
+        "common_evaluable_query_count": 112,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5003085091068227,
+            "pooled_auroc": 0.497040122986371,
+            "query_level_macro_auprc": 0.6965479844243462,
+            "query_level_macro_auroc": 0.5109396475301846
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.5004982423278281,
+            "pooled_auroc": 0.4834854668721457,
+            "query_level_macro_auprc": 0.6749632646705798,
+            "query_level_macro_auroc": 0.4717659840610907
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.5,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.5297569233486348,
+            "pooled_auroc": 0.5322491113783092,
+            "query_level_macro_auprc": 0.7089205758311573,
+            "query_level_macro_auroc": 0.5392159201991531
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5130866565081292,
+            "pooled_auroc": 0.5060844007142844,
+            "query_level_macro_auprc": 0.7325015044198115,
+            "query_level_macro_auroc": 0.5846162684380675
+          }
+        },
+        "coverage_fraction": 0.8549618320610687,
+        "total_stratum_query_count": 131
+      },
+      "small_query_stratum": false,
+      "stratification": "hla_seen_vs_unseen",
+      "stratum": "seen"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5349431074274291,
+          "pooled_auroc": 0.5128125,
+          "query_level_macro_auprc": 0.7232938111271444,
+          "query_level_macro_auroc": 0.5841412037037037
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.5306468084871806,
+          "pooled_auroc": 0.516875,
+          "query_level_macro_auprc": 0.622680693489517,
+          "query_level_macro_auroc": 0.4411597222222222
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5120664492062448,
+          "pooled_auroc": 0.470625,
+          "query_level_macro_auprc": 0.6745407046657046,
+          "query_level_macro_auroc": 0.5559081790123457
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5349431074274291,
+          "bootstrap_query_count": 10,
+          "confidence_interval_95": [
+            -0.15233589121341085,
+            0.0704329634598373
+          ],
+          "difference": -0.022876658221184343,
+          "orthogonalized": 0.5120664492062448
+        },
+        "pooled_auroc": {
+          "additive_only": 0.5128125,
+          "bootstrap_query_count": 10,
+          "confidence_interval_95": [
+            -0.18056009710661908,
+            0.07373182508680554
+          ],
+          "difference": -0.04218749999999999,
+          "orthogonalized": 0.470625
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7232938111271444,
+          "bootstrap_query_count": 10,
+          "confidence_interval_95": [
+            -0.15543978124498958,
+            0.049553992303992246
+          ],
+          "difference": -0.04875310646143982,
+          "orthogonalized": 0.6745407046657046
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.5841412037037037,
+          "bootstrap_query_count": 10,
+          "confidence_interval_95": [
+            -0.156125,
+            0.09264197530864199
+          ],
+          "difference": -0.028233024691358022,
+          "orthogonalized": 0.5559081790123457
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 10,
+        "macro_excluded_query_count": 0,
+        "negative_count": 40,
+        "positive_count": 40,
+        "publication_count": 6,
+        "query_count": 10
+      },
+      "similarity": {
+        "available_query_count": 0,
+        "common_evaluable_query_count": 0,
+        "common_population_metrics": {},
+        "coverage_fraction": 0.0,
+        "total_stratum_query_count": 10
+      },
+      "small_query_stratum": false,
+      "stratification": "hla_seen_vs_unseen",
+      "stratum": "unseen"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.45543988140910363,
+          "pooled_auroc": 0.4575446187128177,
+          "query_level_macro_auprc": 0.7036375661375661,
+          "query_level_macro_auroc": 0.6595982142857142
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.4738202762631456,
+          "pooled_auroc": 0.4824229313142239,
+          "query_level_macro_auprc": 0.5337074962074962,
+          "query_level_macro_auroc": 0.3616071428571429
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.40679945054945055,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5169326144134552,
+          "pooled_auroc": 0.43374797187669006,
+          "query_level_macro_auprc": 0.4471153763564477,
+          "query_level_macro_auroc": 0.25967261904761907
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.45543988140910363,
+          "bootstrap_query_count": 41,
+          "confidence_interval_95": [
+            -0.08282316113476897,
+            0.20734460863041487
+          ],
+          "difference": 0.06149273300435154,
+          "orthogonalized": 0.5169326144134552
+        },
+        "pooled_auroc": {
+          "additive_only": 0.4575446187128177,
+          "bootstrap_query_count": 41,
+          "confidence_interval_95": [
+            -0.21169022154316272,
+            0.19857551772202287
+          ],
+          "difference": -0.023796646836127644,
+          "orthogonalized": 0.43374797187669006
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7036375661375661,
+          "bootstrap_query_count": 8,
+          "confidence_interval_95": [
+            -0.40555555555555556,
+            -0.09860147293183022
+          ],
+          "difference": -0.2565221897811184,
+          "orthogonalized": 0.4471153763564477
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.6595982142857142,
+          "bootstrap_query_count": 8,
+          "confidence_interval_95": [
+            -0.7083333333333333,
+            -0.08035714285714282
+          ],
+          "difference": -0.3999255952380951,
+          "orthogonalized": 0.25967261904761907
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 8,
+        "macro_excluded_query_count": 33,
+        "negative_count": 43,
+        "positive_count": 43,
+        "publication_count": 16,
+        "query_count": 41
+      },
+      "similarity": {
+        "available_query_count": 33,
+        "common_evaluable_query_count": 8,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.47102542942915493,
+            "pooled_auroc": 0.5023809523809524,
+            "query_level_macro_auprc": 0.7036375661375661,
+            "query_level_macro_auroc": 0.6595982142857142
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.40540618128121814,
+            "pooled_auroc": 0.49523809523809514,
+            "query_level_macro_auprc": 0.5337074962074962,
+            "query_level_macro_auroc": 0.3616071428571429
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.4117647058823529,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.40679945054945055,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.4236034362735927,
+            "pooled_auroc": 0.42539682539682533,
+            "query_level_macro_auprc": 0.4471153763564477,
+            "query_level_macro_auroc": 0.25967261904761907
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5386913036035843,
+            "pooled_auroc": 0.6404761904761904,
+            "query_level_macro_auprc": 0.785515873015873,
+            "query_level_macro_auroc": 0.7455357142857142
+          }
+        },
+        "coverage_fraction": 0.8048780487804879,
+        "total_stratum_query_count": 41
+      },
+      "small_query_stratum": false,
+      "stratification": "tcr_seen_vs_unseen",
+      "stratum": "seen"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5048269989793853,
+          "pooled_auroc": 0.5009653554208485,
+          "query_level_macro_auprc": 0.7018810088898078,
+          "query_level_macro_auroc": 0.523038148510738
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.49868711905531116,
+          "pooled_auroc": 0.4831706944203487,
+          "query_level_macro_auprc": 0.6609287311034069,
+          "query_level_macro_auroc": 0.45246128086106685
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.4998585985915196,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5345067145521885,
+          "pooled_auroc": 0.5389294174028503,
+          "query_level_macro_auprc": 0.7062545762730618,
+          "query_level_macro_auroc": 0.5385142678391872
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5048269989793853,
+          "bootstrap_query_count": 141,
+          "confidence_interval_95": [
+            0.004547098115463253,
+            0.055452701517090384
+          ],
+          "difference": 0.029679715572803134,
+          "orthogonalized": 0.5345067145521885
+        },
+        "pooled_auroc": {
+          "additive_only": 0.5009653554208485,
+          "bootstrap_query_count": 141,
+          "confidence_interval_95": [
+            0.012436008645838116,
+            0.06627532754400563
+          ],
+          "difference": 0.03796406198200175,
+          "orthogonalized": 0.5389294174028503
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7018810088898078,
+          "bootstrap_query_count": 128,
+          "confidence_interval_95": [
+            -0.047027567797470464,
+            0.054102349052191114
+          ],
+          "difference": 0.004373567383254007,
+          "orthogonalized": 0.7062545762730618
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.523038148510738,
+          "bootstrap_query_count": 128,
+          "confidence_interval_95": [
+            -0.08030616806461102,
+            0.11043259666105826
+          ],
+          "difference": 0.015476119328449167,
+          "orthogonalized": 0.5385142678391872
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 128,
+        "macro_excluded_query_count": 13,
+        "negative_count": 763,
+        "positive_count": 763,
+        "publication_count": 34,
+        "query_count": 141
+      },
+      "similarity": {
+        "available_query_count": 112,
+        "common_evaluable_query_count": 101,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5032143083673379,
+            "pooled_auroc": 0.49831175539021716,
+            "query_level_macro_auprc": 0.6932957402846139,
+            "query_level_macro_auroc": 0.5156961051533226
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.5028864250585315,
+            "pooled_auroc": 0.4811817285405115,
+            "query_level_macro_auprc": 0.665044364789251,
+            "query_level_macro_auroc": 0.4622047805852024
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5018261504747992,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.49743938360294554,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.5327512290173777,
+            "pooled_auroc": 0.5366206081095503,
+            "query_level_macro_auprc": 0.6994387069851878,
+            "query_level_macro_auroc": 0.532151745380356
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5076693423289669,
+            "pooled_auroc": 0.5004033858802136,
+            "query_level_macro_auprc": 0.7170423770568323,
+            "query_level_macro_auroc": 0.5669916393856136
+          }
+        },
+        "coverage_fraction": 0.7943262411347518,
+        "total_stratum_query_count": 141
+      },
+      "small_query_stratum": false,
+      "stratification": "tcr_seen_vs_unseen",
+      "stratum": "unseen"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5019491903707839,
+          "pooled_auroc": 0.49694970254191456,
+          "query_level_macro_auprc": 0.6174080268440107,
+          "query_level_macro_auroc": 0.5905485185185185
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.46227055556735513,
+          "pooled_auroc": 0.44817739318550565,
+          "query_level_macro_auprc": 0.47260379487608495,
+          "query_level_macro_auroc": 0.3014266666666667
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5318903246451125,
+          "pooled_auroc": 0.519545700378583,
+          "query_level_macro_auprc": 0.6069927969231776,
+          "query_level_macro_auroc": 0.5587202469135802
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5019491903707839,
+          "bootstrap_query_count": 5,
+          "confidence_interval_95": [
+            0.0007644353513880375,
+            0.09322341943964574
+          ],
+          "difference": 0.02994113427432865,
+          "orthogonalized": 0.5318903246451125
+        },
+        "pooled_auroc": {
+          "additive_only": 0.49694970254191456,
+          "bootstrap_query_count": 5,
+          "confidence_interval_95": [
+            0.0011111111111111738,
+            0.04433884297520663
+          ],
+          "difference": 0.02259599783666849,
+          "orthogonalized": 0.519545700378583
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.6174080268440107,
+          "bootstrap_query_count": 5,
+          "confidence_interval_95": [
+            -0.09255007451992309,
+            0.04114568016462529
+          ],
+          "difference": -0.010415229920833102,
+          "orthogonalized": 0.6069927969231776
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.5905485185185185,
+          "bootstrap_query_count": 5,
+          "confidence_interval_95": [
+            -0.14468,
+            0.043559999999999974
+          ],
+          "difference": -0.031828271604938285,
+          "orthogonalized": 0.5587202469135802
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 5,
+        "macro_excluded_query_count": 0,
+        "negative_count": 215,
+        "positive_count": 215,
+        "publication_count": 3,
+        "query_count": 5
+      },
+      "similarity": {
+        "available_query_count": 3,
+        "common_evaluable_query_count": 3,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5004036362429507,
+            "pooled_auroc": 0.4963836024605921,
+            "query_level_macro_auprc": 0.48980649442202323,
+            "query_level_macro_auroc": 0.4533833333333333
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.46627758298418615,
+            "pooled_auroc": 0.45266243752402924,
+            "query_level_macro_auprc": 0.4479833782411166,
+            "query_level_macro_auroc": 0.30793333333333334
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.5,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.5252245391544624,
+            "pooled_auroc": 0.5160034602076125,
+            "query_level_macro_auprc": 0.5252268917775264,
+            "query_level_macro_auroc": 0.4919
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5233100540892396,
+            "pooled_auroc": 0.5233924452133795,
+            "query_level_macro_auprc": 0.6717095389842695,
+            "query_level_macro_auroc": 0.6540166666666667
+          }
+        },
+        "coverage_fraction": 0.6,
+        "total_stratum_query_count": 5
+      },
+      "small_query_stratum": false,
+      "stratification": "antigen_source",
+      "stratum": "tumor_associated"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5130361594876441,
+          "pooled_auroc": 0.49845041322314054,
+          "query_level_macro_auprc": 0.640023315162204,
+          "query_level_macro_auroc": 0.3638657407407407
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.5603922819723277,
+          "pooled_auroc": 0.5025826446280992,
+          "query_level_macro_auprc": 0.7024654614932392,
+          "query_level_macro_auroc": 0.5228703703703704
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.4752939315230211,
+          "pooled_auroc": 0.45764462809917356,
+          "query_level_macro_auprc": 0.6075242504409171,
+          "query_level_macro_auroc": 0.34418209876543204
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5130361594876441,
+          "bootstrap_query_count": 18,
+          "confidence_interval_95": [
+            -0.14429212279485126,
+            0.054922504867442
+          ],
+          "difference": -0.037742227964623065,
+          "orthogonalized": 0.4752939315230211
+        },
+        "pooled_auroc": {
+          "additive_only": 0.49845041322314054,
+          "bootstrap_query_count": 18,
+          "confidence_interval_95": [
+            -0.23666695011337865,
+            0.09700823584386833
+          ],
+          "difference": -0.04080578512396699,
+          "orthogonalized": 0.45764462809917356
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.640023315162204,
+          "bootstrap_query_count": 18,
+          "confidence_interval_95": [
+            -0.1886243386243386,
+            0.11766633263855479
+          ],
+          "difference": -0.03249906472128694,
+          "orthogonalized": 0.6075242504409171
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.3638657407407407,
+          "bootstrap_query_count": 18,
+          "confidence_interval_95": [
+            -0.31069637345679,
+            0.2601626157407406
+          ],
+          "difference": -0.01968364197530864,
+          "orthogonalized": 0.34418209876543204
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 18,
+        "macro_excluded_query_count": 0,
+        "negative_count": 44,
+        "positive_count": 44,
+        "publication_count": 13,
+        "query_count": 18
+      },
+      "similarity": {
+        "available_query_count": 17,
+        "common_evaluable_query_count": 17,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5133653228059842,
+            "pooled_auroc": 0.49864791779340184,
+            "query_level_macro_auprc": 0.6482599807599807,
+            "query_level_macro_auroc": 0.38526960784313724
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.5627610281611162,
+            "pooled_auroc": 0.505137912385073,
+            "query_level_macro_auprc": 0.7143751945222533,
+            "query_level_macro_auroc": 0.5536274509803922
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.5,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.4945391056566456,
+            "pooled_auroc": 0.4710654407787993,
+            "query_level_macro_auprc": 0.6138492063492064,
+            "query_level_macro_auroc": 0.3644281045751634
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.49148663213613586,
+            "pooled_auroc": 0.4816116819902651,
+            "query_level_macro_auprc": 0.6707607588489942,
+            "query_level_macro_auroc": 0.5044444444444444
+          }
+        },
+        "coverage_fraction": 0.9444444444444444,
+        "total_stratum_query_count": 18
+      },
+      "small_query_stratum": false,
+      "stratification": "antigen_source",
+      "stratum": "self_antigen"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5668642589886196,
+          "pooled_auroc": 0.501953125,
+          "query_level_macro_auprc": 0.7307539682539683,
+          "query_level_macro_auroc": 0.5229166666666666
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.44156258545084337,
+          "pooled_auroc": 0.3359375,
+          "query_level_macro_auprc": 0.5668367346938775,
+          "query_level_macro_auroc": 0.2548015873015873
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.6249408338937128,
+          "pooled_auroc": 0.62109375,
+          "query_level_macro_auprc": 0.8244557823129252,
+          "query_level_macro_auroc": 0.8213492063492064
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5668642589886196,
+          "bootstrap_query_count": 7,
+          "confidence_interval_95": [
+            -0.05181489076225909,
+            0.19057331557331558
+          ],
+          "difference": 0.058076574905093215,
+          "orthogonalized": 0.6249408338937128
+        },
+        "pooled_auroc": {
+          "additive_only": 0.501953125,
+          "bootstrap_query_count": 7,
+          "confidence_interval_95": [
+            -0.057851239669421406,
+            0.24930747922437668
+          ],
+          "difference": 0.119140625,
+          "orthogonalized": 0.62109375
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7307539682539683,
+          "bootstrap_query_count": 7,
+          "confidence_interval_95": [
+            -0.09880952380952378,
+            0.2869047619047619
+          ],
+          "difference": 0.09370181405895683,
+          "orthogonalized": 0.8244557823129252
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.5229166666666666,
+          "bootstrap_query_count": 7,
+          "confidence_interval_95": [
+            -0.019027777777777772,
+            0.655892857142857
+          ],
+          "difference": 0.2984325396825398,
+          "orthogonalized": 0.8213492063492064
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 7,
+        "macro_excluded_query_count": 0,
+        "negative_count": 16,
+        "positive_count": 16,
+        "publication_count": 4,
+        "query_count": 7
+      },
+      "similarity": {
+        "available_query_count": 7,
+        "common_evaluable_query_count": 7,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5668642589886196,
+            "pooled_auroc": 0.501953125,
+            "query_level_macro_auprc": 0.7307539682539683,
+            "query_level_macro_auroc": 0.5229166666666666
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.44156258545084337,
+            "pooled_auroc": 0.3359375,
+            "query_level_macro_auprc": 0.5668367346938775,
+            "query_level_macro_auroc": 0.2548015873015873
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.5,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.6249408338937128,
+            "pooled_auroc": 0.62109375,
+            "query_level_macro_auprc": 0.8244557823129252,
+            "query_level_macro_auroc": 0.8213492063492064
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5731983269776666,
+            "pooled_auroc": 0.4765625,
+            "query_level_macro_auprc": 0.7398526077097506,
+            "query_level_macro_auroc": 0.6022222222222222
+          }
+        },
+        "coverage_fraction": 1.0,
+        "total_stratum_query_count": 7
+      },
+      "small_query_stratum": false,
+      "stratification": "antigen_source",
+      "stratum": "pathogen_or_nonself"
+    },
+    {
+      "full_method_metrics": {
+        "additive_only": {
+          "pooled_auprc": 0.5014019343822633,
+          "pooled_auroc": 0.4957972911147287,
+          "query_level_macro_auprc": 0.7198426063025695,
+          "query_level_macro_auroc": 0.5461191213317578
+        },
+        "degree_matched_cnn": {
+          "pooled_auprc": 0.5092580242485762,
+          "pooled_auroc": 0.4998670028833775,
+          "query_level_macro_auprc": 0.678748225951569,
+          "query_level_macro_auroc": 0.4747644263599393
+        },
+        "degree_matched_tcr_only_logistic": {
+          "pooled_auprc": 0.5,
+          "pooled_auroc": 0.5,
+          "query_level_macro_auprc": 0.5,
+          "query_level_macro_auroc": 0.5
+        },
+        "orthogonalized_interaction": {
+          "pooled_auprc": 0.5407352036665013,
+          "pooled_auroc": 0.5440184990122747,
+          "query_level_macro_auprc": 0.72528975671393,
+          "query_level_macro_auroc": 0.5528812287895358
+        }
+      },
+      "orthogonalized_minus_additive_only": {
+        "pooled_auprc": {
+          "additive_only": 0.5014019343822633,
+          "bootstrap_query_count": 111,
+          "confidence_interval_95": [
+            0.007578675584879075,
+            0.07202536040888394
+          ],
+          "difference": 0.03933326928423797,
+          "orthogonalized": 0.5407352036665013
+        },
+        "pooled_auroc": {
+          "additive_only": 0.4957972911147287,
+          "bootstrap_query_count": 111,
+          "confidence_interval_95": [
+            0.01715176586632525,
+            0.07762366142980562
+          ],
+          "difference": 0.048221207897546026,
+          "orthogonalized": 0.5440184990122747
+        },
+        "query_level_macro_auprc": {
+          "additive_only": 0.7198426063025695,
+          "bootstrap_query_count": 111,
+          "confidence_interval_95": [
+            -0.05244383503539733,
+            0.06102757229956886
+          ],
+          "difference": 0.0054471504113605684,
+          "orthogonalized": 0.72528975671393
+        },
+        "query_level_macro_auroc": {
+          "additive_only": 0.5461191213317578,
+          "bootstrap_query_count": 111,
+          "confidence_interval_95": [
+            -0.10139267232027542,
+            0.11326929378050428
+          ],
+          "difference": 0.006762107457778055,
+          "orthogonalized": 0.5528812287895358
+        }
+      },
+      "sample_size": {
+        "macro_evaluable_query_count": 111,
+        "macro_excluded_query_count": 0,
+        "negative_count": 531,
+        "positive_count": 531,
+        "publication_count": 22,
+        "query_count": 111
+      },
+      "similarity": {
+        "available_query_count": 85,
+        "common_evaluable_query_count": 85,
+        "common_population_metrics": {
+          "additive_only": {
+            "pooled_auprc": 0.5006857831839382,
+            "pooled_auroc": 0.4939651678977325,
+            "query_level_macro_auprc": 0.7106853802536853,
+            "query_level_macro_auroc": 0.5371187120397726
+          },
+          "degree_matched_cnn": {
+            "pooled_auprc": 0.5134995016985903,
+            "pooled_auroc": 0.499277017443681,
+            "query_level_macro_auprc": 0.6839964712781899,
+            "query_level_macro_auroc": 0.4790436757301692
+          },
+          "degree_matched_tcr_only_logistic": {
+            "pooled_auprc": 0.5,
+            "pooled_auroc": 0.5,
+            "query_level_macro_auprc": 0.5,
+            "query_level_macro_auroc": 0.5
+          },
+          "orthogonalized_interaction": {
+            "pooled_auprc": 0.5406244785854561,
+            "pooled_auroc": 0.5450183278380519,
+            "query_level_macro_auprc": 0.7249034921603538,
+            "query_level_macro_auroc": 0.5526089510597991
+          },
+          "sequence_similarity": {
+            "pooled_auprc": 0.5141693104922869,
+            "pooled_auroc": 0.502984029913979,
+            "query_level_macro_auprc": 0.7463898673372344,
+            "query_level_macro_auroc": 0.5967513053406169
+          }
+        },
+        "coverage_fraction": 0.7657657657657657,
+        "total_stratum_query_count": 111
+      },
+      "small_query_stratum": false,
+      "stratification": "antigen_source",
+      "stratum": "unknown_source"
+    }
+  ]
+}

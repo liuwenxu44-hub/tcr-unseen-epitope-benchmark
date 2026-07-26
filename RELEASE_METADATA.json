@@ -1,0 +1,10 @@
+{
+  "manuscript_working_files_included": false,
+  "raw_database_exports_included": false,
+  "registered_artifact_count": 65,
+  "release_schema": 1,
+  "scope": "curated_confirmatory_research_release",
+  "source_commit": "0a90257fec984d4ab9a9ccd8fccd186196b63a5e",
+  "superseded_results_included": false,
+  "unit_test_files_included": false
+}

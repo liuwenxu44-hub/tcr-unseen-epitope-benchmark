@@ -1,0 +1,83 @@
+{
+  "artifact_counts": {
+    "additive_only_checkpoints": 25,
+    "degree_matched_cnn_checkpoints": 5,
+    "degree_matched_tcr_only_logistic_checkpoints": 5,
+    "evaluation_methods": 5,
+    "model_checkpoints": 60,
+    "orthogonalized_interaction_checkpoints": 25,
+    "registered_artifacts": 65,
+    "sequence_similarity_fold_references": 5
+  },
+  "checkpoint_and_reference_hashes_all_match": true,
+  "cohort": {
+    "degree_matching_rate": 1.0,
+    "negative_count": 806,
+    "positive_count": 806,
+    "query_count": 141,
+    "query_degree_exact": true,
+    "tcr_degree_exact": true
+  },
+  "external_model_performance_viewed": false,
+  "figure_1_status": "draft_until_external_validation_complete",
+  "freeze_timing": "pre-scoring",
+  "operations_performed": {
+    "plotting": false,
+    "prediction_generation": false,
+    "resampling": false,
+    "scoring": false,
+    "statistical_testing": false,
+    "training": false
+  },
+  "outputs": {
+    "checkpoint_registry_csv": {
+      "path": "results/external/iedb/external_checkpoint_registry.csv",
+      "sha256": "531ef4a8b93252dc5e6e9dcf878a659ee5966c6a5eb9c6a5e62694084bd94cbe"
+    },
+    "protocol_json": {
+      "path": "results/external/iedb/evaluation_protocol.json",
+      "sha256": "8770264e0a7df4b634eb8e54588248f09ccc2dc12c3153b03aecac34a41ad841"
+    },
+    "protocol_md": {
+      "path": "results/external/iedb/evaluation_protocol.md",
+      "sha256": "9cabac6a5e9bc188ff3cff8a15a9f472b562fc3b2d3a959a6d0234b2243f4b59"
+    }
+  },
+  "protocol_status": "frozen",
+  "schema_version": 1,
+  "source_commit": "0c27f9a2d92cf96eb06f0c5d45a1e30e19d843d9",
+  "sources": {
+    "cnn_checkpoint_summary": {
+      "path": "results/baseline_cnn/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/five_fold_summary.json",
+      "sha256": "cbc17aa1772273f1fa438605274f54118d1150373e0823e43d94648760118d91"
+    },
+    "cohort_manifest": {
+      "path": "data/external/iedb_strict_cap100/manifest.json",
+      "sha256": "3f7f797e26aa7743622e75d516b67459c988f254e18e0c1fad8e62d6333bf927"
+    },
+    "configuration": {
+      "path": "configs/external_iedb_evaluation.yaml",
+      "sha256": "cc0bce003e9ac0865d0d512d40202f77d365d94aabcdc3947e0dabd5897967b6"
+    },
+    "primary_checkpoint_summary": {
+      "path": "results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_interaction_resample_robustness/negative_resample_summary.json",
+      "sha256": "fcaac1e57a9cba30bfd7599de9915c7f6a6f5def25444b14a8b9f2dd7407bf72"
+    },
+    "similarity_algorithm": {
+      "path": "src/retrieval_similarity.py",
+      "sha256": "53797fca37f276eba99df5bf608565a67d450bc14e0a478d214b6a26dca05ed6"
+    },
+    "similarity_config": {
+      "path": "configs/degree_matched_5fold_similarity.yaml",
+      "sha256": "a8c13af2be2538b58a03e8a1eafecc2aa79df2f3726dd92f0f9662f679b2d9d3"
+    },
+    "similarity_reference_summary": {
+      "path": "results/similarity_baseline/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/summary.json",
+      "sha256": "c13031162db0bb53402b7ca98344d4d5bb10ca4fc2d88b4b4238c3854207960f"
+    },
+    "tcr_only_checkpoint_summary": {
+      "path": "results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_tcr_only/summary.json",
+      "sha256": "09e451301bf18a7e73a9011e3ff56ab60d9c64235891bd3f16121871b8c04e28"
+    }
+  }
+}

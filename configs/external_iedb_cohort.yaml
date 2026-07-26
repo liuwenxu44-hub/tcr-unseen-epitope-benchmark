@@ -1,0 +1,105 @@
+schema_version: 1
+base_commit: ee2d00a3f672082dca866a04352863eaa0a2ea34
+source_audit:
+  config:
+    path: configs/external_iedb_audit.yaml
+    sha256: 9893057ba6551485c7ebd59f98bcb3b95f71b4125651413c1299a4dce54ce3d8
+  manifest:
+    path: results/external/iedb/feasibility_manifest.json
+    sha256: a533be78bbb856124fd22e5c2cb50230150686341b2ac699236ae29510fc0cc7
+  report:
+    path: results/external/iedb/feasibility_report.md
+    sha256: cc628a035e61845134f5fc392d5f9ebb503e76b097909adab2adfb6aa8adbd3c
+  candidate_tier_summary:
+    path: results/external/iedb/candidate_tier_summary.csv
+    sha256: 13af059934b7b3f15504167146cfecabb7670421ce592c534ebdc756cb569eab
+  degree_matching_feasibility:
+    path: results/external/iedb/degree_matching_feasibility.csv
+    sha256: 5034edea069ec9838a5b732ac1e0fd515ed82c5978724d856a6e1827ca0ff972
+  overlap_audit:
+    path: results/external/iedb/overlap_audit.csv
+    sha256: e830ba2c36de44676b21cb0a503dbec810492865aa00b1f45953209b3a415529
+  schema_mapping:
+    path: results/external/iedb/schema_mapping.json
+    sha256: 16f2b89bf36f28f71a6703268179f1c542a44a76fbed2bacc957f39f3e89e819
+immutable_independence:
+  publication_reference_overlap: 0
+  development_peptide_overlap: 0
+  maximum_development_peptide_similarity: 0.5
+  exact_degree_matching_rate: 1.0
+reference_policy:
+  require_mapped_publication_reference: true
+  exclusion_rule: records with a missing, blank, or non-standardizable publication/reference
+    identifier are excluded
+  canonical_identifiers:
+  - PMID
+  - DOI
+  rationale: records without a mapped publication/reference cannot demonstrate publication
+    independence from VDJdb and must not enter formal external validation
+  provenance:
+    upstream_config_path: configs/external_iedb_audit.yaml
+    upstream_config_sha256: 9893057ba6551485c7ebd59f98bcb3b95f71b4125651413c1299a4dce54ce3d8
+    upstream_config_key: independence.require_mapped_publication_for_tier_a
+    upstream_value: true
+    normalization_module: src/tcrue/iedb_external_audit.py
+    normalization_functions:
+    - _canonical_publication_tokens
+    - build_candidate_tiers
+    rule_status: explicitly_frozen_from_existing_upstream_audit
+original_pass_conditions:
+  strict_positive_records_at_least: 200
+  strict_queries_at_least: 20
+  strict_query_minimum_positive_count: 10
+  strict_publications_at_least: 20
+  degree_matching_query_cap: 20
+  capped_queries_at_least: 20
+  capped_positive_records_at_least: 200
+  exact_degree_match: true
+allowed_relaxation:
+  field: strict_query_minimum_positive_count
+  threshold_order:
+  - 20
+  - 10
+  - 5
+  - 1
+  selection_rule: first threshold in fixed order satisfying every original quantity
+    and independence gate
+  all_other_conditions_locked: true
+final_inclusion_rule:
+  tier: C
+  minimum_positive_records_per_query: 1
+  query_cap_for_degree_matching: 100
+  require_mapped_publication_reference: true
+  publication_reference_overlap: 0
+  development_peptide_overlap: 0
+  maximum_development_peptide_similarity: 0.5
+  exact_degree_matching_rate: 1.0
+  status: frozen
+protocol_amendments:
+- amendment_id: iedb-formal-cohort-cap100-pre-scoring
+  parent_commit: 43a66c635edea61a08c30991f720701aa38443dc
+  timing: pre-scoring
+  external_model_scoring_performed_before_amendment: false
+  external_model_performance_viewed: false
+  changed_field: final_inclusion_rule.query_cap_for_degree_matching
+  previous_value: 20
+  amended_value: 100
+  reason: resolve the mismatch between the cap=20 cohort-decision configuration and the previously audited formal cohort size at cap=100
+  feasibility_evidence:
+    path: results/external/iedb/degree_matching_feasibility.csv
+    sha256: 5034edea069ec9838a5b732ac1e0fd515ed82c5978724d856a6e1827ca0ff972
+    query_cap: 100
+    exact_solution_required: true
+  preserved_cap20_history:
+    original_pass_condition_path: original_pass_conditions.degree_matching_query_cap
+    original_pass_condition_value: 20
+    decision_csv_path: results/external/iedb/cohort_decision.csv
+    decision_csv_sha256: 221ced587289fcf92163b2345f253270da1b537f5ba025f72d33d3595dcd45e3
+    pre_amendment_config_sha256: feec1caf893fb1e8e5706d58e539023772e0a5e65d9d54d7a4a2eff619d55591
+    pre_amendment_decision_json_sha256: 0e579401d5c0981c198a3ecbc7024841e1a826ad1b6d5f0925cd80a509f7ec0c
+    pre_amendment_report_sha256: 39583ac718a21b7394b8690d6984f1e90b1fcea06e7dfda92fe21d352afe0ce4
+outputs:
+  directory: results/external/iedb
+  csv: cohort_decision.csv
+  json: cohort_decision.json
+  report: cohort_decision.md

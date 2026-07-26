@@ -1,0 +1,120 @@
+schema_version: 1
+source_commit: 0c27f9a2d92cf96eb06f0c5d45a1e30e19d843d9
+protocol_status: frozen
+freeze_date: 2026-07-17
+freeze_timing: pre-scoring
+
+cohort:
+  manifest:
+    path: data/external/iedb_strict_cap100/manifest.json
+    sha256: 3f7f797e26aa7743622e75d516b67459c988f254e18e0c1fad8e62d6333bf927
+  count_source: manifest.summary
+  matching_source: manifest.degree_matching_audit
+
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+resample_ids: [resample_1, resample_2, resample_3, resample_4, resample_5]
+
+primary_models:
+  orthogonalized_interaction:
+    role: primary
+    checkpoint_count: 25
+    probability_aggregation: arithmetic_mean_across_all_25_checkpoints
+  additive_only:
+    role: primary_comparator
+    checkpoint_count: 25
+    probability_aggregation: arithmetic_mean_across_all_25_checkpoints
+  checkpoint_source:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_interaction_resample_robustness/negative_resample_summary.json
+    sha256: fcaac1e57a9cba30bfd7599de9915c7f6a6f5def25444b14a8b9f2dd7407bf72
+
+secondary_controls:
+  degree_matched_cnn:
+    checkpoint_count: 5
+    probability_aggregation: arithmetic_mean_across_5_folds
+    checkpoint_source:
+      path: results/baseline_cnn/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/five_fold_summary.json
+      sha256: cbc17aa1772273f1fa438605274f54118d1150373e0823e43d94648760118d91
+  degree_matched_tcr_only_logistic:
+    checkpoint_count: 5
+    probability_aggregation: arithmetic_mean_across_5_folds
+    checkpoint_source:
+      path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_tcr_only/summary.json
+      sha256: 09e451301bf18a7e73a9011e3ff56ab60d9c64235891bd3f16121871b8c04e28
+  sequence_similarity:
+    fold_reference_count: 5
+    score_aggregation: arithmetic_mean_across_available_folds
+    same_hla_only: true
+    cross_hla_fallback: false
+    unavailable_rule: unavailable_when_no_fold_has_same_hla_training_reference
+    reference_source:
+      path: results/similarity_baseline/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/summary.json
+      sha256: c13031162db0bb53402b7ca98344d4d5bb10ca4fc2d88b4b4238c3854207960f
+    algorithm:
+      path: src/retrieval_similarity.py
+      sha256: 53797fca37f276eba99df5bf608565a67d450bc14e0a478d214b6a26dca05ed6
+    config:
+      path: configs/degree_matched_5fold_similarity.yaml
+      sha256: a8c13af2be2538b58a03e8a1eafecc2aa79df2f3726dd92f0f9662f679b2d9d3
+
+endpoints:
+  primary:
+    metric: query_level_macro_auprc
+    comparison: orthogonalized_interaction_minus_additive_only
+    multiplicity_status: sole_primary_endpoint
+    population: all_formal_cohort_queries
+  secondary:
+    - query_level_macro_auroc
+    - pooled_auroc
+    - pooled_auprc
+
+statistics:
+  independent_sampling_unit: query
+  bootstrap:
+    type: paired_query_cluster
+    iterations: 10000
+    confidence_level: 0.95
+    seed: 13
+  permutation:
+    type: query_level_paired
+    iterations: 10000
+    alternative: two_sided
+    seed: 13
+  report: [difference, confidence_interval_95, two_sided_p_value]
+  multiple_testing:
+    primary_metric: unadjusted_pre_specified_primary
+    secondary_metrics: holm_across_three_secondary_endpoints
+
+exploratory_stratification:
+  - hla_seen_vs_unseen
+  - tcr_seen_vs_unseen
+  - antigen_source
+stratification_rule: exploratory_only_and_never_replaces_full_cohort_primary_analysis
+
+similarity_comparison:
+  population: common_evaluable_queries_only
+  report_coverage: true
+
+restrictions:
+  external_data_model_selection: false
+  external_data_calibration: false
+  external_data_threshold_selection: false
+  external_data_hyperparameter_tuning: false
+  training_performed_by_protocol_freeze: false
+  scoring_performed_by_protocol_freeze: false
+  predictions_generated_by_protocol_freeze: false
+  resampling_performed_by_protocol_freeze: false
+  statistical_testing_performed_by_protocol_freeze: false
+  plotting_performed_by_protocol_freeze: false
+
+pre_scoring_declaration:
+  frozen_before_any_external_scoring: true
+  external_model_performance_viewed: false
+  figure_1_status: draft
+  figure_1_formal_update_allowed_before_external_validation: false
+
+outputs:
+  directory: results/external/iedb
+  protocol_json: evaluation_protocol.json
+  protocol_md: evaluation_protocol.md
+  checkpoint_registry_csv: external_checkpoint_registry.csv
+  manifest_json: evaluation_protocol_manifest.json

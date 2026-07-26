@@ -1,0 +1,32 @@
+schema_version: 1
+seed: 13
+
+experiment:
+  tier: development
+  positive_split_strategy: distance_aware_5fold_rebalanced_query_balanced_cap100
+  negative_strategy: DEGREE_MATCHED
+  method: sequence_similarity
+
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+
+similarity:
+  top_k_epitopes: 5
+  definition: 1 - levenshtein_distance / max_sequence_length
+  candidate_chunk_size: 512
+  workers: -1
+  same_hla_only: true
+  cross_hla_fallback: false
+
+inputs:
+  manifest: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/degree_matched_manifest.json
+  cnn_summary: results/baseline_cnn/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/five_fold_summary.json
+  full_logistic_summary: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/summary.json
+  original_similarity_config: configs/retrieval_similarity_baseline.yaml
+  algorithm_source: src/retrieval_similarity.py
+
+outputs:
+  directory: results/similarity_baseline/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100
+  predictions_csv: oof_predictions.csv
+  per_query_csv: per_query_metrics.csv
+  summary_json: summary.json
+  report_md: report.md
