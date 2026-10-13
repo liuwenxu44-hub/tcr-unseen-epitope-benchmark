@@ -1,12 +1,14 @@
-.venv/
+/materials/
+*.zip
+*.log
+*.tmp
+*.temp
 __pycache__/
 *.py[cod]
-
-# Source database exports are downloaded locally and are not redistributed.
-data/raw/*.zip
-data/raw/*.tsv
-data/raw/*.csv
-
-# User-generated prediction outputs.
-ranked_tcrs.csv
-ranked_tcrs.csv.metadata.json
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+~$*

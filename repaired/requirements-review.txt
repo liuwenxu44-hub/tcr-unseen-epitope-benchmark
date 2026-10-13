@@ -1,0 +1,5 @@
+# Existing-checkpoint loading and frozen-result review only. No Torch or training.
+numpy==1.26.0
+scipy==1.15.3
+scikit-learn==1.7.2
+joblib==1.5.3

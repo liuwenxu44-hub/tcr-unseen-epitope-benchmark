@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this benchmark or software, please cite this repository and the associated article."
-title: "TCR Unseen Epitope Benchmark"
+message: "Please cite the version used and the underlying source databases/publications."
+title: "TCR Unseen Epitope Benchmark repaired H1 and G2 materials"
 type: software
-version: 1.0.0
-date-released: 2026-07-26
+version: 1.1.0
+date-released: 2026-10-14
 license: MIT
 repository-code: "https://github.com/liuwenxu44-hub/tcr-unseen-epitope-benchmark"
-url: "https://github.com/liuwenxu44-hub/tcr-unseen-epitope-benchmark"
+url: "https://github.com/liuwenxu44-hub/tcr-unseen-epitope-benchmark/releases/tag/v1.1.0"
 authors:
   - family-names: Liu
     given-names: Wenxu
@@ -17,13 +17,13 @@ authors:
     given-names: Zhe
 keywords:
   - T-cell receptor
-  - unseen epitope
-  - computational benchmark
+  - unseen peptide
   - degree matching
   - shortcut learning
-  - external validation
+  - descriptive sensitivity analysis
 abstract: >-
-  Reproducible code, frozen artifacts, and registered models for strict
-  TCR CDR3 beta-peptide-HLA interaction benchmarking with distance-aware
-  splits, degree-matched putative negatives, internal resampling, and
-  publication-independent IEDB validation.
+  Frozen repaired primary inputs, models, predictions and summaries (H1),
+  all seven common-positive sensitivity recipes (G2), and a portable
+  result-verification and limited scoring adapter. Historical v1.0.0 is
+  retained separately. The MIT designation covers original software;
+  third-party data terms are documented separately.

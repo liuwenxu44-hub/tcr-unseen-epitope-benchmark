@@ -1,0 +1,49 @@
+schema_version: 1
+seed: 13
+fold_ids: [fold_1, fold_2, fold_3, fold_4, fold_5]
+
+experiment:
+  tier: development
+  positive_split_strategy: distance_aware_5fold_rebalanced_query_balanced_cap100
+  negative_strategy: degree_matched
+  query_balanced_cap: 100
+  model: full_logistic
+
+features:
+  amino_acids: ACDEFGHIKLMNPQRSTVWY
+  tcr_kmers: [1, 2]
+  epitope_kmers: [1, 2]
+  normalized_frequencies: true
+  amino_acid_composition_interaction: 20x20
+  include_tcr_length: true
+  include_epitope_length: true
+  hla_encoding: train_only_one_hot
+  unknown_hla_token: UNK_HLA
+
+model:
+  estimator: sklearn.linear_model.LogisticRegression
+  penalty: l2
+  C: 1.0
+  class_weight: null
+  max_iter: 5000
+  solver: liblinear
+  random_state_source: seed
+
+data:
+  manifest:
+    path: data/negatives/distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100/degree_matched_manifest.json
+    sha256: e118d8bd655353cc2ff7287378ba0c75b370e8f6d25d97549dbb9b3ee5e6631d
+
+references:
+  original_full_config:
+    path: configs/kmer_logistic_5fold.yaml
+    sha256: f957952d7df2ec94fa1b303488ccc11dfb2137875380a8e3563136fac1826919
+  original_full_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_n1_cap100/summary.json
+    sha256: e8c2f6ef285243f99260a7b92b34832ddb4fa46f4c93386bb476b1cb2f0f401f
+  degree_matched_tcr_only_summary:
+    path: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100_tcr_only/summary.json
+    sha256: 09e451301bf18a7e73a9011e3ff56ab60d9c64235891bd3f16121871b8c04e28
+
+output:
+  directory: results/logistic_regression/development_distance_aware_5fold_rebalanced_query_balanced_degree_matched_cap100

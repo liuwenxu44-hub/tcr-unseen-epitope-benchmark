@@ -1,0 +1,286 @@
+{
+  "version": "1.1.0",
+  "note": "Byte-identical frozen analysis source/configuration. Historical absolute paths in archived executors identify original artifacts; use review.py for portable result verification. No new end-to-end training validation is claimed.",
+  "files": [
+    {
+      "path": "repaired/frozen_code/active_source/configs/degree_matched_additive_logistic_5fold.yaml",
+      "materials_path": "active_source/configs/degree_matched_additive_logistic_5fold.yaml",
+      "sha256": "4254a426265aa66defb4d69da87358a24aa3f3e7c2af7f37a7ce9030c1cce6c5"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/configs/degree_matched_full_logistic_5fold.yaml",
+      "materials_path": "active_source/configs/degree_matched_full_logistic_5fold.yaml",
+      "sha256": "0fee3fcad3b21fa42c31fff593597a0c907570a9bff5bd9e5e795602e79939e2"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/configs/degree_matched_orthogonalized_logistic_5fold.yaml",
+      "materials_path": "active_source/configs/degree_matched_orthogonalized_logistic_5fold.yaml",
+      "sha256": "bbf8453a291c1971e3e78c493108e4dd4637ef05660c3c5d1ad7d2ebfa53d9d2"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/configs/interaction_resample_robustness.yaml",
+      "materials_path": "active_source/configs/interaction_resample_robustness.yaml",
+      "sha256": "c48f3bebd464603490c0898a67b1bcabdb6915a74c8e25849df3712b3f3f930e"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/cross_resample_evaluation.py",
+      "materials_path": "active_source/src/cross_resample_evaluation.py",
+      "sha256": "71496f6f4c76ab7db3d4e4884061809311b3890a2a8d176fbe58e200c0837b84"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/data.py",
+      "materials_path": "active_source/src/data.py",
+      "sha256": "e1d71ad4ce243ff42a07139ab91460cb767118b54a99ab51af090176532ea0d5"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/degree_matched_additive_logistic.py",
+      "materials_path": "active_source/src/degree_matched_additive_logistic.py",
+      "sha256": "9bfe6359011d954f15fc03e026161300e8dfe3fedd3cda8f66466d1ff152d57d"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/degree_matched_full_logistic.py",
+      "materials_path": "active_source/src/degree_matched_full_logistic.py",
+      "sha256": "b0e05b953c1c60cc782c74ab90a8145bd9896d8001347139da766fc4cec2dddb"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/degree_matched_orthogonalized_logistic.py",
+      "materials_path": "active_source/src/degree_matched_orthogonalized_logistic.py",
+      "sha256": "ca5261f4c2a6da2af2201fe8035a7f3ed740889940651ff6344f205c9a8015ec"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/degree_matched_tcr_only_logistic.py",
+      "materials_path": "active_source/src/degree_matched_tcr_only_logistic.py",
+      "sha256": "7f2fe5abab40fe8405efa2a0b3a158d4b62dd1dfb8406e93bd517da66e017adc"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/five_fold_summary.py",
+      "materials_path": "active_source/src/five_fold_summary.py",
+      "sha256": "22e89cd740a6acb489e2bf227588fad74569cb2eeb320a807aa2f6dc70bb3fe8"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/iedb_external_scoring.py",
+      "materials_path": "active_source/src/iedb_external_scoring.py",
+      "sha256": "f179925d7a09234932e678d2090c8e6ed261d52892c4ea21c1d0f5c4e5d97396"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/interaction_resample_robustness.py",
+      "materials_path": "active_source/src/interaction_resample_robustness.py",
+      "sha256": "ab0bb4ed8aaeac8d4a690a2819bc5ed49526e7a6b02fa2c2a3e66e8c1b62be99"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/kmer_logistic.py",
+      "materials_path": "active_source/src/kmer_logistic.py",
+      "sha256": "d68b8dea1cc203d02412296c7b8edcb93ef8f033442d1328d2a60fad52ea5440"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/metrics.py",
+      "materials_path": "active_source/src/metrics.py",
+      "sha256": "7513d5c86e56a78d861ff1d3af9463357cb2f97c6da2a55e4b324831522aa1df"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/model_cnn.py",
+      "materials_path": "active_source/src/model_cnn.py",
+      "sha256": "83bd32b41f674739e4f1a95ec5ac090106188ae18eede479469bb6dbc8beb1f8"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcr_only_logistic.py",
+      "materials_path": "active_source/src/tcr_only_logistic.py",
+      "sha256": "3fa7910bb1fcf91df0ff1c39cc049292b5a40ee44cff5e2dcbdcaa2a9997f460"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/__init__.py",
+      "materials_path": "active_source/src/tcrue/__init__.py",
+      "sha256": "bc9d101a1ee1cacd8af49fe7453982c645e4c0d3b04c94a6344a43a69c218e30"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/data_tiers.py",
+      "materials_path": "active_source/src/tcrue/data_tiers.py",
+      "sha256": "f820450429bbccfd20d77f966ffec81d8b6036cd55445ed542487bfd32059e40"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/degree_matched_negatives.py",
+      "materials_path": "active_source/src/tcrue/degree_matched_negatives.py",
+      "sha256": "289f034c64ed2b24cd2c61146d5e1d1434784cf29191663a06f0a58e1f7fdeda"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/distance_aware_split.py",
+      "materials_path": "active_source/src/tcrue/distance_aware_split.py",
+      "sha256": "1b70b7f5bdf1b3bc4c01a57e19df1ade3298152d3f6bd5fce54b6d5a42fd2852"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/mixed_negatives.py",
+      "materials_path": "active_source/src/tcrue/mixed_negatives.py",
+      "sha256": "add8483494eca2c847e5817da6c7ccffda8eea2244736f0a41bd018c78061e91"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/negative_sampling.py",
+      "materials_path": "active_source/src/tcrue/negative_sampling.py",
+      "sha256": "0cc413225296f1301635850341131d7d4fa8c7c0165e88170a17097d694f3447"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/tcrue/vdjdb.py",
+      "materials_path": "active_source/src/tcrue/vdjdb.py",
+      "sha256": "6c0e7a7cccc881a3f1f06fd7d77a8fddc648a5b2c00e376a1d4fd1ee56c21184"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/train.py",
+      "materials_path": "active_source/src/train.py",
+      "sha256": "a4a1c4e0e1dc32108ab24fb09e2da763de67f54bda7da78f5800aa7f7c675797"
+    },
+    {
+      "path": "repaired/frozen_code/active_source/src/vocab.py",
+      "materials_path": "active_source/src/vocab.py",
+      "sha256": "d3a4e5ff07866462787343ac2e902da8cb11df89ff14e2cd93aaf7fec0595dc1"
+    },
+    {
+      "path": "repaired/frozen_code/environment/.python-version",
+      "materials_path": "environment/.python-version",
+      "sha256": "3817f125779f46c574b17c4adbdd0975ef8c32ae92509fed295212797d314d6a"
+    },
+    {
+      "path": "repaired/frozen_code/environment/requirements.constraints.txt",
+      "materials_path": "environment/requirements.constraints.txt",
+      "sha256": "23a2b34a18f2447666147b199f63541826a2194ac3dc300798d47814b70ed829"
+    },
+    {
+      "path": "repaired/frozen_code/environment/requirements.lock.txt",
+      "materials_path": "environment/requirements.lock.txt",
+      "sha256": "004b973787f718cce6901ca4a09a11c10de2c74e3cbe50500f08b6df9d038454"
+    },
+    {
+      "path": "repaired/frozen_code/environment/requirements.txt",
+      "materials_path": "environment/requirements.txt",
+      "sha256": "f3c7b8e8ae923a1ae328b4fe1adc93f25e8d1f2f29b2589ada38f10ffb985a61"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_structure/registry_build_v2.py",
+      "materials_path": "generations/G2_structure/registry_build_v2.py",
+      "sha256": "206f182d6ac8276320c37652a8ce72c8f824911030a7aec6751c6c623818ae52"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/audit_additive_catalog.py",
+      "materials_path": "generations/G2_training/audit_additive_catalog.py",
+      "sha256": "a4748e2417ce5f3cb8808e8b8bb15449d7a07f1bde8580f92600d2810831db65"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/audit_additive_g2.py",
+      "materials_path": "generations/G2_training/audit_additive_g2.py",
+      "sha256": "ae5c8473fd9282ed307c3eae85d7f689318d27b84302b7517f3845cb04b582c5"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/audit_additive_launch.py",
+      "materials_path": "generations/G2_training/audit_additive_launch.py",
+      "sha256": "01fa8d164334ffd9f7f27094664aaa637369e9f4e01b8a1947d9a9346d4031fc"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/audit_additive_shared_transform.py",
+      "materials_path": "generations/G2_training/audit_additive_shared_transform.py",
+      "sha256": "6e7beaa70e312b3bd15a1238c80b100f4754887d1d74e27057559f0d48f05c62"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/finalize_r04_training.py",
+      "materials_path": "generations/G2_training/finalize_r04_training.py",
+      "sha256": "9d259765d316d135f2508a4f3829f84dfa8bde6f6380df4a31324f0c264bbbaf"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/freeze_pretraining.py",
+      "materials_path": "generations/G2_training/freeze_pretraining.py",
+      "sha256": "c9ba2a7e7b8c3f9794f10aecd1d03e3c3053175d51433cd1374ce51674582435"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/identity_training_g2.py",
+      "materials_path": "generations/G2_training/identity_training_g2.py",
+      "sha256": "6f34d87cccc9f7125352be60f5c9e639fe2fb18dd569181e2262d1f8e81a5702"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/run_g2_training.py",
+      "materials_path": "generations/G2_training/run_g2_training.py",
+      "sha256": "ea9bec59c244738241c557b7e53e612c32cb41d3ae2e05169861621b7f8c1b2f"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/summarize_r04_failure_fixture.py",
+      "materials_path": "generations/G2_training/summarize_r04_failure_fixture.py",
+      "sha256": "ef58a46b53537b0f6377a4b2fd78bf250d8a9abc78e4db2c2e2fababeacd4e94"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/summarize_r04_g2.py",
+      "materials_path": "generations/G2_training/summarize_r04_g2.py",
+      "sha256": "23d83542bb8761aa74d888971f8bfb8dc0ed24d048e3d1ff7baeeb347b57e19a"
+    },
+    {
+      "path": "repaired/frozen_code/generations/G2_training/validate_r04_metrics_g2.py",
+      "materials_path": "generations/G2_training/validate_r04_metrics_g2.py",
+      "sha256": "0f843cc09e111abb6b25b769d523c89380d52a61f1c0c759cc3b5fdeaa79d59a"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/additive/admit_and_bind25.py",
+      "materials_path": "generations/H1/additive/admit_and_bind25.py",
+      "sha256": "f91d876209a65c7bfa9e8e470a7fe7c8bb69b40f862dc4d5ea65dfa708e07489"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/metrics/build_metrics.py",
+      "materials_path": "generations/H1/metrics/build_metrics.py",
+      "sha256": "95a545bb692417fc3e7248b96017aeb0f3adac08b98e99fec67f61cbe1a2c37d"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/metrics/prepare_scoring_plan.py",
+      "materials_path": "generations/H1/metrics/prepare_scoring_plan.py",
+      "sha256": "25d1fcdaecf121bc650a0a67ca3e48433b77b600acf307726e9dbd09c58df520"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/metrics/score_h1.py",
+      "materials_path": "generations/H1/metrics/score_h1.py",
+      "sha256": "50e2df975c96773721febdff0b06aa8ce70a44e92b127d48bc4280187c095c11"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/structure/prepare_h1_structure.py",
+      "materials_path": "generations/H1/structure/prepare_h1_structure.py",
+      "sha256": "de757e45f7c2fdd0a78addb04f5c61e3eb63aecd781a8a954c5b5dfb103d2943"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/structure/run_h1_structure.py",
+      "materials_path": "generations/H1/structure/run_h1_structure.py",
+      "sha256": "cac458af74fd78fb06ba8f2454d662e570f5b672144725e0e87682c52fbda2a9"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/training/fit_original18.py",
+      "materials_path": "generations/H1/training/fit_original18.py",
+      "sha256": "f9a843683523ac712163d73291dc79c59e5213075bd90c1a416f2ea73b5175b2"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/training/freeze_methods.py",
+      "materials_path": "generations/H1/training/freeze_methods.py",
+      "sha256": "121886240b9899902ad01bc9a268f474cba93325ba121aeea933172603f4c2d7"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/training/prepare_original25.py",
+      "materials_path": "generations/H1/training/prepare_original25.py",
+      "sha256": "bb85855bd0101256ef1d145ffb9c961fa1b536840dc7ad23a47ec3e1c7637462"
+    },
+    {
+      "path": "repaired/frozen_code/generations/H1/training/release_scoring.py",
+      "materials_path": "generations/H1/training/release_scoring.py",
+      "sha256": "1f757c9766a2a2d8a3e913fa78ca0024f5f6bc6a47583cb34165dc6c1f545a74"
+    },
+    {
+      "path": "repaired/frozen_code/historical_source_data/configs/external_iedb_cohort.yaml",
+      "materials_path": "historical_source_data/configs/external_iedb_cohort.yaml",
+      "sha256": "3277c0a32584e91712b5fdf8babed0a19accb8198e111b1c314929db2e7ac99e"
+    },
+    {
+      "path": "repaired/frozen_code/historical_source_data/r07_revision_20261010/tables/build_r07_tables.py",
+      "materials_path": "historical_source_data/r07_revision_20261010/tables/build_r07_tables.py",
+      "sha256": "4a832dd0e7fc59720e6d32f6045988d28cf3089a87853ed7f8a224a27cb10974"
+    },
+    {
+      "path": "repaired/frozen_code/historical_source_data/r07_revision_20261010/tables/final_table_editorial_clarifications.py",
+      "materials_path": "historical_source_data/r07_revision_20261010/tables/final_table_editorial_clarifications.py",
+      "sha256": "5100336f61d6a2fb4a547d7c0040a53a948371228f5885aa81139206ff2afc7f"
+    },
+    {
+      "path": "repaired/frozen_code/provenance/export_public_provenance.py",
+      "materials_path": "provenance/export_public_provenance.py",
+      "sha256": "4d7ecd1c7c3e286ad2a4d4d89f2cd6b66c102f8008c7b84454ccff968d0e229f"
+    }
+  ]
+}

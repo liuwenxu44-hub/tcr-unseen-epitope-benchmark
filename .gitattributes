@@ -1,0 +1,3 @@
+# Frozen source and manifest bytes are deliberately preserved.
+repaired/frozen_code/** -text
+release/MATERIALS_MANIFEST.json -text
